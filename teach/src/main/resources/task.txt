@@ -1,0 +1,4 @@
+lesson#1
+1. Create file with main git command
+(pull, push,checkout, branch, add, rm, commit, status, log, fetch)
+2. Add dependencies to maven (jUnit, google guava)
