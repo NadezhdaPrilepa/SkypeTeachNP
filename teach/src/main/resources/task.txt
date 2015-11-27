@@ -5,3 +5,5 @@ lesson#1
 
 lesson#2
  1. Create dependencyManagement
+ 2. Right work with mvn in console
+ 3. Learn byte code commands
