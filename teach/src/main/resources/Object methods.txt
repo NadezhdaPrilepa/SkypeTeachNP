@@ -1,0 +1,12 @@
+obj.equals(Object object)
+Возвращает boolean, результат сравнения двух ссылок (obj и Object) на объект.
+true - если равны, false- иначе
+obj.hashCode()
+obj.toString()
+Возвращает String, приведение сущности Object к сущности String
+(немного не понятно, что будет результатом, т.к. String instanceof Object, а не наоборот )
+obj.getClass()
+Возвращает Object, сущность на которую указывает ссылка obj
+obj.notify(); видимо что-то связано с уведомлением...
+obj.notifyAll();
+obj.wait();

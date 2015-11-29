@@ -7,3 +7,8 @@ lesson#2
  1. Create dependencyManagement
  2. Right work with mvn in console
  3. Learn byte code commands
+
+ lesson#3
+ 1. Create cycle of objects (minimal count of objects)
+ 2. Cycle of objects should be possible for garbage collector
+ 3. Describe all public methods of Object
