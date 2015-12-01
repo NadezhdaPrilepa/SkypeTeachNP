@@ -33,26 +33,42 @@ class Address {
             return false;
         }
         Address addr = (Address) obj;
-        // indexNum not important for result
-        if (this.cityName.equals(addr.cityName)) {
+        /*indexNum not important for result
+         if cityName equals or both of String field cityName == null */
+        if ((this.cityName == null && addr.cityName == null)||this.cityName.equals(addr.cityName)) {
             if ((this.streetName != null) && (addr.streetName != null)) {
-//               "." and case in streetName is not important for result
+                //      "." and case in streetName is not important for result
                 if (this.streetName.trim().toLowerCase().equals(addr.streetName.trim().toLowerCase().replace(".", ""))) {
-                    if ((this.streetType != null) && (addr.streetType != null)) {
-//                       "." and case in streetType is not important for result.
-//                        Length of streetType is not important too...
-                        if ((this.streetType.toLowerCase().replace(".", "").
-                                contains(addr.streetType.toLowerCase().replace(".", ""))
-                                || addr.streetType.toLowerCase().replace(".", "").contains(this.streetType.toLowerCase().replace(".", ""))) &&
-                                this.houseNum == addr.houseNum
-                                && this.flatNum == addr.flatNum) {
-                            return true;
-                        }
+                    if (equalsAddress(this.streetType, addr.streetType, this.houseNum, addr.houseNum, this.flatNum, addr.flatNum)) {
+                        return true;
                     }
+                }
+            } else if ((this.streetName == null) && (addr.streetName == null)) {
+                if (equalsAddress(this.streetType, addr.streetType, this.houseNum, addr.houseNum, this.flatNum, addr.flatNum)) {
+                    return true;
                 }
             }
         }
         return false;
     }
 
+    private boolean equalsAddress(String type, String type1, int house, int house1, int flat, int flat1) {
+        if ((type != null) && (type1 != null)) {
+        /* "." and case in streetType is not important for result.
+            Length of streetType is not important too...  */
+            if ((type.toLowerCase().replace(".", "").
+                    contains(type1.toLowerCase().replace(".", ""))
+                    || type1.toLowerCase().replace(".", "").contains(type.toLowerCase().replace(".", ""))) &&
+                    house == house1
+                    && flat == flat1) {
+                return true;
+            }
+        } else if ((type == null) && (type1 == null)) {
+            if ((house == house1)
+                    && (flat == flat1)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
