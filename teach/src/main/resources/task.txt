@@ -12,3 +12,11 @@ lesson#2
  1. Create cycle of objects (minimal count of objects)
  2. Cycle of objects should be possible for garbage collector
  3. Describe all public methods of Object
+
+ lesson#4
+ 1. Download Oracle Java Convention and read
+ 2. Create class Address and define method Equals for it(many params)
+ 3. Test Address.equals using JUnit(100% coverage)
+ 4. Read info about JUnit assert methods
+
+
