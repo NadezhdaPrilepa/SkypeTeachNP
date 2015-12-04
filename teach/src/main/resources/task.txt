@@ -19,4 +19,11 @@ lesson#2
  3. Test Address.equals using JUnit(100% coverage)
  4. Read info about JUnit assert methods
 
+ lesson#5
+ 1. Learn merge git command
+ 2. 38 line Find lib Guava utility method For Comparison Objects
+ 3. Override HashCode() for Address(create + pass test)
+ 4. Describe rules between equals() and hashCode()
+
+
 

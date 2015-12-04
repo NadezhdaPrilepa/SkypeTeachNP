@@ -1,5 +1,9 @@
 package skype.teach.np;
 
+import com.google.common.collect.ComparisonChain;
+import com.google.common.collect.Ordering;
+import com.sun.istack.internal.Nullable;
+
 /**
  * @author NPrilepa
  *         Class Address override method Equals(Address adr)
@@ -35,40 +39,60 @@ class Address {
         Address addr = (Address) obj;
         /*indexNum not important for result
          if cityName equals or both of String field cityName == null */
-        if ((this.cityName == null && addr.cityName == null)||this.cityName.equals(addr.cityName)) {
-            if ((this.streetName != null) && (addr.streetName != null)) {
-                //      "." and case in streetName is not important for result
-                if (this.streetName.trim().toLowerCase().equals(addr.streetName.trim().toLowerCase().replace(".", ""))) {
-                    if (equalsAddress(this.streetType, addr.streetType, this.houseNum, addr.houseNum, this.flatNum, addr.flatNum)) {
-                        return true;
-                    }
-                }
-            } else if ((this.streetName == null) && (addr.streetName == null)) {
+        //if (CompareTo(this.cityName, addr.cityName) != 0) {
+        if ((this.cityName != null && addr.cityName != null) && (!this.cityName.trim().equalsIgnoreCase(addr.cityName.trim()))) {
+            return false;
+        }
+        if ((this.streetName != null) && (addr.streetName != null)) {
+            //      "." and case in streetName is not important for result
+            if (this.streetName.trim().replace(".", "").equalsIgnoreCase(addr.streetName.trim().replace(".", ""))) {
                 if (equalsAddress(this.streetType, addr.streetType, this.houseNum, addr.houseNum, this.flatNum, addr.flatNum)) {
                     return true;
                 }
             }
+        } else if ((this.streetName == null) && (addr.streetName == null)) {
+            if (equalsAddress(this.streetType, addr.streetType, this.houseNum, addr.houseNum, this.flatNum, addr.flatNum)) {
+                return true;
+            }
         }
+
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = cityName != null ? cityName.trim().toLowerCase().hashCode() : 0;
+        result = 31 * result + (streetName != null ? streetName.trim().toLowerCase().hashCode() : 0);
+        result = 31 * result + (streetType != null ? streetType.trim().replace(".","").toLowerCase().hashCode() : 0);
+        result = 31 * result + houseNum;
+        result = 31 * result + flatNum;
+        //indexNum is not important
+        //result = 31 * result + indexNum;
+        return result;
     }
 
     private boolean equalsAddress(String type, String type1, int house, int house1, int flat, int flat1) {
         if ((type != null) && (type1 != null)) {
         /* "." and case in streetType is not important for result.
             Length of streetType is not important too...  */
-            if ((type.toLowerCase().replace(".", "").
-                    contains(type1.toLowerCase().replace(".", ""))
-                    || type1.toLowerCase().replace(".", "").contains(type.toLowerCase().replace(".", ""))) &&
-                    house == house1
-                    && flat == flat1) {
-                return true;
+
+            if ((type.replace(".", "").
+                    equalsIgnoreCase(type1.replace(".", ""))))
+                     {
+                return house == house1 ? flat == flat1 : false;
             }
         } else if ((type == null) && (type1 == null)) {
-            if ((house == house1)
-                    && (flat == flat1)) {
-                return true;
-            }
+            return house == house1 ? flat == flat1 : false;
         }
         return false;
     }
+
+   /* private int CompareTo(
+            String str1,
+            String str2) {
+        return ComparisonChain.start()
+                .compare(str1, str2, Ordering.natural().nullsFirst())
+                .result();
+
+    }*/
 }
