@@ -1,14 +1,11 @@
 package skype.teach.np;
 
-import com.google.common.collect.ComparisonChain;
-import com.google.common.collect.Ordering;
-import com.sun.istack.internal.Nullable;
-
 /**
  * @author NPrilepa
- *         Class Address override method Equals(Address adr)
+ *         Class NpAddress override method Equals(NpAddress adr)
  */
-class Address {
+
+public class NpAddress {
     private String cityName;
     private String streetName;
     private String streetType;
@@ -16,7 +13,7 @@ class Address {
     private int flatNum;
     private int indexNum;
 
-    Address(String cityName, String streetName, String streetType, int houseNum, int flatNum, int indexNum) {
+    NpAddress(String cityName, String streetName, String streetType, int houseNum, int flatNum, int indexNum) {
         this.cityName = cityName;
         this.streetName = streetName;
         this.streetType = streetType;
@@ -33,13 +30,12 @@ class Address {
         if (obj == null) {
             return false;
         }
-        if (!(obj instanceof Address)) {
+        if (!(obj instanceof NpAddress)) {
             return false;
         }
-        Address addr = (Address) obj;
+        NpAddress addr = (NpAddress) obj;
         /*indexNum not important for result
          if cityName equals or both of String field cityName == null */
-        //if (CompareTo(this.cityName, addr.cityName) != 0) {
         if ((this.cityName != null && addr.cityName != null) && (!this.cityName.trim().equalsIgnoreCase(addr.cityName.trim()))) {
             return false;
         }
@@ -57,9 +53,10 @@ class Address {
         }
 
         return false;
+
     }
 
-    @Override
+    //@Override
     public int hashCode() {
         int result = cityName != null ? cityName.trim().toLowerCase().hashCode() : 0;
         result = 31 * result + (streetName != null ? streetName.trim().toLowerCase().hashCode() : 0);
@@ -69,9 +66,24 @@ class Address {
         //indexNum is not important
         //result = 31 * result + indexNum;
         return result;
+
+    }
+    public String getStreetType()
+    {
+        return streetType;
+    }
+    public int getHouseNum()
+    {
+        return houseNum;
     }
 
-    private boolean equalsAddress(String type, String type1, int house, int house1, int flat, int flat1) {
+    public int getFlatNum()
+    {
+        return flatNum;
+    }
+
+
+     boolean equalsAddress(String type, String type1, int house, int house1, int flat, int flat1) {
         if ((type != null) && (type1 != null)) {
         /* "." and case in streetType is not important for result.
             Length of streetType is not important too...  */
@@ -87,12 +99,4 @@ class Address {
         return false;
     }
 
-   /* private int CompareTo(
-            String str1,
-            String str2) {
-        return ComparisonChain.start()
-                .compare(str1, str2, Ordering.natural().nullsFirst())
-                .result();
-
-    }*/
 }

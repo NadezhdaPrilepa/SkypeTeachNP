@@ -11,29 +11,30 @@ public class NpAddressTest {
     @Test
     public void testEqualsAddress() {
 
-        Address adr = new Address("Moscow", "Stoleshnikov", "per.", 23, 34, 1234);
-        Address adr1 = new Address("Moscow", "Stoleshnikov", "per.", 23, 35, 1234);
-        Address adr2 = new Address("Moscow", "Stoleshnikov", "per.", 23, 35, 1234);
-        Address adr3 = new Address(null, "Stoleshnikov", "per.", 23, 35, 1234);
+        NpAddress adr = new NpAddress("Moscow", "Stoleshnikov", "per.", 23, 34, 1234);
+        NpAddress adr1 = new NpAddress("Moscow", "Stoleshnikov", "per.", 23, 35, 1234);
+        NpAddress adr2 = new NpAddress("Moscow", "Stoleshnikov", "per.", 23, 35, 1234);
+        NpAddress adr3 = new NpAddress(null, "Stoleshnikov", "per.", 23, 35, 1234);
 
-        Address adr4 = new Address("Moscow", "Stoleshnikov", null, 23, 35, 1234);
+        NpAddress adr4 = new NpAddress("Moscow", "Stoleshnikov", null, 23, 35, 1234);
 
-        Address adr5 = new Address("Moscow", "Stoleshnikov", "p.", 23, 34, 1234);
-        Address adr6 = new Address("Moscow", " Stoleshnikov ", "per", 23, 34, 1234);
-        Address adr7 = new Address("Moscow", "Stoleshnikov", "per.", 23, 34, 123445);
+        NpAddress adr5 = new NpAddress("Moscow", "Stoleshnikov", "p.", 23, 34, 1234);
+        NpAddress adr6 = new NpAddress("Moscow", " Stoleshnikov ", "per", 23, 34, 1234);
+        NpAddress adr7 = new NpAddress("Moscow", "Stoleshnikov", "per.", 23, 34, 123445);
 
-        Address adr8 = new Address("Moscow", null, "p", 23, 34, 1234);
-        Address adr9 = new Address("Moscow", "stoleshnikov", "per", 23, 34, 1234);
-        Address adr10 = new Address("S.-Pb", "stoleshnikov", "p", 23, 34, 1234);
-        Address adr11 = new Address(null, "Stoleshnikov", "per.", 23, 35, 1234);
-        Address adr12 = new Address("Moscow", "Stoleshnikov", null, 23, 35, 1234);
-        Address adr13 = new Address("Moscow", null, "p", 23, 34, 1234);
-        Address adr14 = new Address("", null, "p", 23, 34, 1234);
-        Address adr15 = new Address(" ", null, "p", 23, 34, 1234);
+        NpAddress adr8 = new NpAddress("Moscow", null, "p", 23, 34, 1234);
+        NpAddress adr9 = new NpAddress("Moscow", "stoleshnikov", "per", 23, 34, 1234);
+        NpAddress adr10 = new NpAddress("S.-Pb", "stoleshnikov", "p", 23, 34, 1234);
+        NpAddress adr11 = new NpAddress(null, "Stoleshnikov", "per.", 23, 35, 1234);
+        NpAddress adr12 = new NpAddress("Moscow", "Stoleshnikov", null, 23, 35, 1234);
+        NpAddress adr13 = new NpAddress("Moscow", null, "p", 23, 34, 1234);
+        NpAddress adr14 = new NpAddress("", null, "p", 23, 34, 1234);
+        NpAddress adr15 = new NpAddress(" ", null, "p", 23, 34, 1234);
         Object obj = new Object();
 
         assertEquals("test different flatNum: adr.equals(adr1)", false, adr.equals(adr1));
         assertEquals("test different flatNum: adr.hashCode()==adr1.hashCode()", false, adr.hashCode() == adr1.hashCode());
+        assertEquals("adr.equalsAddress(adr.getStreetType(),adr1.getStreetType(), adr.getHouseNum(), adr1.getHouseNum(),adr.getFlatNum(), adr1.getFlatNum())", false, adr.equalsAddress(adr.getStreetType(),adr1.getStreetType(), adr.getHouseNum(), adr1.getHouseNum(),adr.getFlatNum(), adr1.getFlatNum()));
 
         assertEquals("test the same Address: adr.equals(adr)", true, adr.equals(adr));
         assertEquals("test the same Address: adr.hashCode()==adr.hashCode()", true, adr.hashCode() == adr.hashCode());
@@ -51,11 +52,13 @@ public class NpAddressTest {
 
         assertEquals("test streetType = null: adr.equals(adr4)", false, adr.equals(adr4));
         assertEquals("test streetType = null: adr.hashCode()==adr4.hashCode()", false, adr.hashCode() == adr4.hashCode());
+        assertEquals("adr.equalsAddress(adr.getStreetType(),adr4.getStreetType(), adr.getHouseNum(), adr4.getHouseNum(),adr.getFlatNum(), adr4.getFlatNum())", false, adr.equalsAddress(adr.getStreetType(),adr4.getStreetType(), adr.getHouseNum(), adr4.getHouseNum(),adr.getFlatNum(), adr4.getFlatNum()));
 
         assertEquals("test symmetry: adr.equals(adr4)", false, adr4.equals(adr));
 
         assertEquals("test contains of \".\" in streetType: adr.equals(adr5)", false, adr.equals(adr5));
         assertEquals("test contains of \".\" in streetType: adr.hashCode()==adr5.hashCode():", false, adr.hashCode() == adr5.hashCode());
+        assertEquals("adr.equalsAddress(adr.getStreetType(),adr5.getStreetType(), adr.getHouseNum(), adr5.getHouseNum(),adr.getFlatNum(), adr5.getFlatNum())", false, adr.equalsAddress(adr.getStreetType(),adr5.getStreetType(), adr.getHouseNum(), adr5.getHouseNum(),adr.getFlatNum(), adr5.getFlatNum()));
 
         assertEquals("test symmetry contains of \".\" in streetType: adr5.equals(adr)", false, adr5.equals(adr));
 
@@ -82,9 +85,12 @@ public class NpAddressTest {
 
         assertEquals("test both streeType = null: adr4.equals(adr12)", true, adr4.equals(adr12));
         assertEquals("test both streeType = null: adr4.hashCode()==adr12.hashCode()", true, adr4.hashCode() == adr12.hashCode());
+        assertEquals("adr4.equalsAddress(adr4.getStreetType(),adr12.getStreetType(), adr4.getHouseNum(), adr12.getHouseNum(),adr4.getFlatNum(), adr12.getFlatNum())", true, adr4.equalsAddress(adr4.getStreetType(),adr12.getStreetType(), adr4.getHouseNum(), adr12.getHouseNum(),adr4.getFlatNum(), adr12.getFlatNum()));
 
         assertEquals("test trim() for cityName: adr14.equals(adr15)", true, adr14.equals(adr15));
         assertEquals("test trim() for cityName: adr14.hashCode()==adr15.hashCode()", true, adr14.hashCode() == adr15.hashCode());
+
+        assertEquals("adr.equalsAddress(adr.getStreetType(),adr11.getStreetType(), adr.getHouseNum(), adr11.getHouseNum(),adr.getFlatNum(), adr11.getFlatNum())", false, adr.equalsAddress(adr.getStreetType(),adr11.getStreetType(), adr.getHouseNum(), adr11.getHouseNum(),adr.getFlatNum(), adr11.getFlatNum()));
     }
 
 }
