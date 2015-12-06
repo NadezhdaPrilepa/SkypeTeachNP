@@ -1,6 +1,7 @@
 package skype.teach.np;
 
 /**
+ * internal class for NpAddress
  * @author NPrilepa
  */
  class NpAddressEA {
