@@ -42,12 +42,12 @@ public class NpAddress {
         if ((this.streetName != null) && (addr.streetName != null)) {
             //      "." and case in streetName is not important for result
             if (this.streetName.trim().replace(".", "").equalsIgnoreCase(addr.streetName.trim().replace(".", ""))) {
-                if (equalsAddress(this.streetType, addr.streetType, this.houseNum, addr.houseNum, this.flatNum, addr.flatNum)) {
+                if (NpAddressEA.equalsAddress(this.streetType, addr.streetType, this.houseNum, addr.houseNum, this.flatNum, addr.flatNum)) {
                     return true;
                 }
             }
         } else if ((this.streetName == null) && (addr.streetName == null)) {
-            if (equalsAddress(this.streetType, addr.streetType, this.houseNum, addr.houseNum, this.flatNum, addr.flatNum)) {
+            if (NpAddressEA.equalsAddress(this.streetType, addr.streetType, this.houseNum, addr.houseNum, this.flatNum, addr.flatNum)) {
                 return true;
             }
         }
@@ -80,23 +80,6 @@ public class NpAddress {
     public int getFlatNum()
     {
         return flatNum;
-    }
-
-
-     boolean equalsAddress(String type, String type1, int house, int house1, int flat, int flat1) {
-        if ((type != null) && (type1 != null)) {
-        /* "." and case in streetType is not important for result.
-            Length of streetType is not important too...  */
-
-            if ((type.replace(".", "").
-                    equalsIgnoreCase(type1.replace(".", ""))))
-                     {
-                return house == house1 ? flat == flat1 : false;
-            }
-        } else if ((type == null) && (type1 == null)) {
-            return house == house1 ? flat == flat1 : false;
-        }
-        return false;
     }
 
 }

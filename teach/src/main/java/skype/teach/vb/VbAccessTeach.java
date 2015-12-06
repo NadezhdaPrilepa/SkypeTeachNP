@@ -7,13 +7,12 @@ public class VbAccessTeach {
     public int num;
     private static VbAccessTeach instance=new VbAccessTeach();
 
-    public static VbAccessTeach getInstance() {
+   public static VbAccessTeach getInstance() {
         return instance;
-    }
+   }
 
-    public VbAccessTeach() {
+    private VbAccessTeach() {
         this.num = num;
-
     }
 
     public static void main(String[] args) {

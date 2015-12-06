@@ -34,7 +34,7 @@ public class NpAddressTest {
 
         assertEquals("test different flatNum: adr.equals(adr1)", false, adr.equals(adr1));
         assertEquals("test different flatNum: adr.hashCode()==adr1.hashCode()", false, adr.hashCode() == adr1.hashCode());
-        assertEquals("adr.equalsAddress(adr.getStreetType(),adr1.getStreetType(), adr.getHouseNum(), adr1.getHouseNum(),adr.getFlatNum(), adr1.getFlatNum())", false, adr.equalsAddress(adr.getStreetType(),adr1.getStreetType(), adr.getHouseNum(), adr1.getHouseNum(),adr.getFlatNum(), adr1.getFlatNum()));
+        assertEquals("adr.equalsAddress(adr.getStreetType(),adr1.getStreetType(), adr.getHouseNum(), adr1.getHouseNum(),adr.getFlatNum(), adr1.getFlatNum())", false, NpAddressEA.equalsAddress(adr.getStreetType(),adr1.getStreetType(), adr.getHouseNum(), adr1.getHouseNum(),adr.getFlatNum(), adr1.getFlatNum()));
 
         assertEquals("test the same Address: adr.equals(adr)", true, adr.equals(adr));
         assertEquals("test the same Address: adr.hashCode()==adr.hashCode()", true, adr.hashCode() == adr.hashCode());
@@ -52,13 +52,13 @@ public class NpAddressTest {
 
         assertEquals("test streetType = null: adr.equals(adr4)", false, adr.equals(adr4));
         assertEquals("test streetType = null: adr.hashCode()==adr4.hashCode()", false, adr.hashCode() == adr4.hashCode());
-        assertEquals("adr.equalsAddress(adr.getStreetType(),adr4.getStreetType(), adr.getHouseNum(), adr4.getHouseNum(),adr.getFlatNum(), adr4.getFlatNum())", false, adr.equalsAddress(adr.getStreetType(),adr4.getStreetType(), adr.getHouseNum(), adr4.getHouseNum(),adr.getFlatNum(), adr4.getFlatNum()));
+        assertEquals("adr.equalsAddress(adr.getStreetType(),adr4.getStreetType(), adr.getHouseNum(), adr4.getHouseNum(),adr.getFlatNum(), adr4.getFlatNum())", false, NpAddressEA.equalsAddress(adr.getStreetType(), adr4.getStreetType(), adr.getHouseNum(), adr4.getHouseNum(), adr.getFlatNum(), adr4.getFlatNum()));
 
         assertEquals("test symmetry: adr.equals(adr4)", false, adr4.equals(adr));
 
         assertEquals("test contains of \".\" in streetType: adr.equals(adr5)", false, adr.equals(adr5));
         assertEquals("test contains of \".\" in streetType: adr.hashCode()==adr5.hashCode():", false, adr.hashCode() == adr5.hashCode());
-        assertEquals("adr.equalsAddress(adr.getStreetType(),adr5.getStreetType(), adr.getHouseNum(), adr5.getHouseNum(),adr.getFlatNum(), adr5.getFlatNum())", false, adr.equalsAddress(adr.getStreetType(),adr5.getStreetType(), adr.getHouseNum(), adr5.getHouseNum(),adr.getFlatNum(), adr5.getFlatNum()));
+        assertEquals("adr.equalsAddress(adr.getStreetType(),adr5.getStreetType(), adr.getHouseNum(), adr5.getHouseNum(),adr.getFlatNum(), adr5.getFlatNum())", false, NpAddressEA.equalsAddress(adr.getStreetType(), adr5.getStreetType(), adr.getHouseNum(), adr5.getHouseNum(), adr.getFlatNum(), adr5.getFlatNum()));
 
         assertEquals("test symmetry contains of \".\" in streetType: adr5.equals(adr)", false, adr5.equals(adr));
 
@@ -85,12 +85,12 @@ public class NpAddressTest {
 
         assertEquals("test both streeType = null: adr4.equals(adr12)", true, adr4.equals(adr12));
         assertEquals("test both streeType = null: adr4.hashCode()==adr12.hashCode()", true, adr4.hashCode() == adr12.hashCode());
-        assertEquals("adr4.equalsAddress(adr4.getStreetType(),adr12.getStreetType(), adr4.getHouseNum(), adr12.getHouseNum(),adr4.getFlatNum(), adr12.getFlatNum())", true, adr4.equalsAddress(adr4.getStreetType(),adr12.getStreetType(), adr4.getHouseNum(), adr12.getHouseNum(),adr4.getFlatNum(), adr12.getFlatNum()));
+        assertEquals("adr4.equalsAddress(adr4.getStreetType(),adr12.getStreetType(), adr4.getHouseNum(), adr12.getHouseNum(),adr4.getFlatNum(), adr12.getFlatNum())", true, NpAddressEA.equalsAddress(adr4.getStreetType(), adr12.getStreetType(), adr4.getHouseNum(), adr12.getHouseNum(), adr4.getFlatNum(), adr12.getFlatNum()));
 
         assertEquals("test trim() for cityName: adr14.equals(adr15)", true, adr14.equals(adr15));
         assertEquals("test trim() for cityName: adr14.hashCode()==adr15.hashCode()", true, adr14.hashCode() == adr15.hashCode());
 
-        assertEquals("adr.equalsAddress(adr.getStreetType(),adr11.getStreetType(), adr.getHouseNum(), adr11.getHouseNum(),adr.getFlatNum(), adr11.getFlatNum())", false, adr.equalsAddress(adr.getStreetType(),adr11.getStreetType(), adr.getHouseNum(), adr11.getHouseNum(),adr.getFlatNum(), adr11.getFlatNum()));
+        assertEquals("adr.equalsAddress(adr.getStreetType(),adr11.getStreetType(), adr.getHouseNum(), adr11.getHouseNum(),adr.getFlatNum(), adr11.getFlatNum())", false, NpAddressEA.equalsAddress(adr.getStreetType(),adr11.getStreetType(), adr.getHouseNum(), adr11.getHouseNum(),adr.getFlatNum(), adr11.getFlatNum()));
     }
 
 }
