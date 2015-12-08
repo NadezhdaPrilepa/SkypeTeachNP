@@ -11,7 +11,7 @@ public class VbAccessTeach {
         return instance;
    }
 
-    private VbAccessTeach() {
+    public VbAccessTeach() {
         this.num = num;
     }
 
