@@ -25,5 +25,12 @@ lesson#2
  3. Override HashCode() for Address(create + pass test)
  4. Describe rules between equals() and hashCode()
 
+ lesson#6
+ 1. Create two branches with conflicts and merge both of them(resolving conflicts using Idea)
+ 2. Describe access modifiers (accessible place, usage pattern)
+ 3. Refactor NpAddress(move equalsAddress to separate package class with adding Unit test for it)
+ 4. Describe requirements for Calculator
+ 5. Analyse requirements for calculator and describe entities
+
 
 
