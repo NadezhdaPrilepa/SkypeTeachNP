@@ -12,12 +12,12 @@ public class Animal {
         this.pet = false;
     }
 
-    public boolean isPetAnimal() {
+    public boolean isPet() {
 
         return pet;
     }
 
-    public boolean isPetAnimal(boolean pet) {
+    public boolean isPet(boolean pet) {
 
         return pet;
     }

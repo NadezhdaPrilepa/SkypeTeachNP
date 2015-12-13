@@ -7,7 +7,7 @@ public class Dog extends Wolf {
     private boolean pet = true;
 
     @Override
-    public boolean isPetAnimal() {
+    public boolean isPet() {
         return pet;
     }
 

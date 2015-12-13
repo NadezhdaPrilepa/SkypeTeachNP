@@ -14,7 +14,7 @@ public class Cat extends Animal {
     }
 
     @Override
-    public boolean isPetAnimal() {
+    public boolean isPet() {
         if (kind == null) {
             return true;
         }

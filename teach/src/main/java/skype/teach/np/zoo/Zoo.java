@@ -32,7 +32,7 @@ public class Zoo {
            if (!i.hasNext())
                break;
            Animal animal = (Animal) i.next();
-           if (!animal.isPetAnimal()) {
+           if (!animal.isPet()) {
               return false;
            }
        } while (true);
