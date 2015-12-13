@@ -4,6 +4,7 @@ package skype.teach.vb;
  * @author NPrilepa
  */
 public class VbConstantTeach {
+
     public static final int NUMBER_OF_RECORDS;
 
     static {

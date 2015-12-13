@@ -4,6 +4,7 @@ package skype.teach.vb;
  * @author NPrilepa
  */
 public class VbJavaBeanTeach {
+
     private boolean active;
     private String name;
 
