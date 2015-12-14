@@ -5,8 +5,8 @@ package skype.teach.np.zoo;
  */
 public class Wolf extends Animal {
 
-    public static String VOICE_WOLF;
-    public static String EAT_WOLF;
+    public static final String VOICE_WOLF;
+    public static final String EAT_WOLF;
 
     static {
         VOICE_WOLF = "u-u-u";

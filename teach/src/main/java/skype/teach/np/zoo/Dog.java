@@ -4,8 +4,8 @@ package skype.teach.np.zoo;
  * @author NPrilepa
  */
 public class Dog extends Wolf {
-    public static String VOICE_DOG;
-    public static String EAT_DOG;
+    public static final String VOICE_DOG;
+    public static final String EAT_DOG;
 
     static {
         VOICE_DOG = "gav";
