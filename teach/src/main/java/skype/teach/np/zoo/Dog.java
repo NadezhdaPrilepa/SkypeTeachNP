@@ -5,13 +5,15 @@ package skype.teach.np.zoo;
  */
 public class Dog extends Wolf {
     public static String VOICE_DOG;
+    public static String EAT_DOG;
 
     static {
         VOICE_DOG = "gav";
+        EAT_DOG = "dog food";
     }
     @Override
     public boolean isPet() {
-        return pet;
+        return true;
     }
 
     @Override
@@ -21,7 +23,7 @@ public class Dog extends Wolf {
 
     @Override
     public String getEat() {
-        return "dog food";
+        return EAT_DOG;
     }
 
 }
