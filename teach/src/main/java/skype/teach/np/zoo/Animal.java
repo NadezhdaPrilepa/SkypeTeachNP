@@ -4,14 +4,18 @@ package skype.teach.np.zoo;
  * @author NPrilepa
  */
 public class Animal {
-    private boolean pet;
-    private String voice;
-    private String eat;
-
+    boolean pet;
+    String voice;
+    String eat;
 
     public Animal() {
 
-        this.pet = false;
+    }
+
+    public Animal(boolean pet, String voice, String eat) {
+        this.voice = voice;
+        this.eat = eat;
+        this.pet = pet;
     }
 
     public boolean isPet() {
@@ -19,12 +23,8 @@ public class Animal {
         return pet;
     }
 
-    public boolean isPet(boolean pet) {
-
-        return pet;
-    }
-
     public String getVoice() {
+
         return voice;
     }
 
@@ -33,11 +33,13 @@ public class Animal {
     }
 
     public void setVoice(String voice) {
+
         this.voice = voice;
     }
 
-    public void getEat(String eat) {
-        this.eat = eat;
+
+    public Animal sick() {
+        return this;
     }
 
 

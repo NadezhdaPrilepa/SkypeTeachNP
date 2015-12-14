@@ -4,41 +4,20 @@ package skype.teach.np.zoo;
  * @author NPrilepa
  */
 public class Cat extends Animal {
-    public static final String  VOICE_CAT;
-    public static final String EAT_CAT;
-
-    static {
-        VOICE_CAT = "meau";
-        EAT_CAT = "milk";
-    }
-    String kind;
+    public static final String VOICE_CAT = "meau";
+    public static final String EAT_CAT = "milk";
 
     public Cat() {
-    }
-
-    public Cat(String kind) {
-        this.kind = kind;
+        super(true, VOICE_CAT, EAT_CAT);
     }
 
     @Override
-    public boolean isPet() {
-        if (kind == null) {
-            return true;
+    public Cat sick() {
+        if (!getVoice().equals(VOICE_CAT)) {
+            return this;
         }
-        if (kind.equalsIgnoreCase("lynx")) {
-            return false;
-        }
-        return true;
+        return null;
     }
 
-    @Override
-    public String getVoice() {
-        return VOICE_CAT;
-    }
-
-    @Override
-    public String getEat() {
-        return EAT_CAT;
-    }
 
 }
