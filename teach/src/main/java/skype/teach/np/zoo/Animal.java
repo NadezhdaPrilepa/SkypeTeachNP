@@ -4,7 +4,9 @@ package skype.teach.np.zoo;
  * @author NPrilepa
  */
 public class Animal {
-    boolean pet ;
+    protected boolean pet;
+    protected String voice;
+    protected String eat;
 
 
     public Animal() {
@@ -22,13 +24,20 @@ public class Animal {
         return pet;
     }
 
-    public String voice()
-    {
-        return "";
+    public String getVoice() {
+        return voice;
     }
-    public String eat()
-    {
-        return "";
+
+    public String getEat() {
+        return eat;
+    }
+
+    public void setVoice(String voice) {
+        this.voice = voice;
+    }
+
+    public void getEat(String eat) {
+        this.eat = eat;
     }
 
 

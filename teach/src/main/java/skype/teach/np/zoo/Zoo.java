@@ -48,7 +48,7 @@ public class Zoo {
                 break;
             Animal animal = (Animal) i.next();
 
-            result=result.concat(" '" +animal.voice()+"'");
+            result=result.concat(" '" +animal.getVoice()+"'");
         } while (true);
         return result;
     }
@@ -60,7 +60,7 @@ public class Zoo {
             if (!i.hasNext())
                 break;
             Animal animal = (Animal) i.next();
-            result=result.concat(" "+animal.eat() );
+            result=result.concat(" "+animal.getEat() );
         } while (true);
         return result;
     }

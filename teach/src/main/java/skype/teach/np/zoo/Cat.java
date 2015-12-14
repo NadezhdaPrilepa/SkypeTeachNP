@@ -4,6 +4,11 @@ package skype.teach.np.zoo;
  * @author NPrilepa
  */
 public class Cat extends Animal {
+    public static String VOICE_CAT;
+
+    static {
+        VOICE_CAT = "meau";
+    }
     String kind;
 
     public Cat() {
@@ -25,12 +30,12 @@ public class Cat extends Animal {
     }
 
     @Override
-    public String voice() {
-        return "meau";
+    public String getVoice() {
+        return VOICE_CAT;
     }
 
     @Override
-    public String eat() {
+    public String getEat() {
         return "milk";
     }
 
