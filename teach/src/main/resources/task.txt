@@ -45,6 +45,12 @@ lesson#2
  2. Describe rules for JAVA names conventions
  3. Describe constants in JAVA
 
+ lesson#9
+ 1. Learn git command stash
+ 2. Try to use git stash
+ 3. Describe rules of init blocks(fields,static fields, final fields)
+ 4. Design use case with user registration + tests
+
 
 
 
