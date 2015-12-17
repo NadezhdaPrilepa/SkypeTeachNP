@@ -16,7 +16,7 @@ public class ZooTest {
 
 
     @Test
-    public void ZooTest() {
+    public void zooTest() {
 
         zooBerlin.addAnimal(wf);
         zooBerlin.addAnimal(dog);
@@ -39,9 +39,9 @@ public class ZooTest {
         assertEquals("zooMoscow.zooVoice()", "Zoo voice is: 'u-u-u' 'gav' 'gav'", zooMoscow.zooVoice());
         assertEquals("zooMoscow.zooEat()", "Zoo eat is: meat dog food milk", zooMoscow.zooEat());
         zooMoscow.removeAnimal(cat);
-        assertEquals("zooMoscow.getCat()", true, zooMoscow.getCat());
+        assertEquals("zooMoscow.getCat()", true, zooMoscow.hasCat());
         zooMoscow.removeSickAnimal();
-        assertEquals("zooMoscow.getCat()", false, zooMoscow.getCat());
+        assertEquals("zooMoscow.getCat()", false, zooMoscow.hasCat());
         assertEquals("zooMoscow.zooEat()", "Zoo eat is: meat dog food", zooMoscow.zooEat());
         wf.setVoice("gav");
         zooMoscow.removeSickAnimal();

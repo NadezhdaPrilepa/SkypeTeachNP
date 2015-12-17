@@ -9,10 +9,10 @@ public class Wolf extends Animal {
 
     public Wolf() {
 
-        super(false, VOICE_WOLF, EAT_WOLF);
+        this(false, VOICE_WOLF, EAT_WOLF);
     }
 
-    public Wolf(boolean pet, String voice, String eat) {
+    protected Wolf(boolean pet, String voice, String eat) {
         super(pet, voice, eat);
     }
 

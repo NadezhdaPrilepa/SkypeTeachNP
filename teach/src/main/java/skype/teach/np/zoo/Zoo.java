@@ -23,7 +23,7 @@ public class Zoo {
         //do nothing
     }
 
-    public boolean getCat() {
+    public boolean hasCat() {
         Iterator i = this.zoo.iterator();
         while (i.hasNext()) {
             Animal animal = (Animal) i.next();

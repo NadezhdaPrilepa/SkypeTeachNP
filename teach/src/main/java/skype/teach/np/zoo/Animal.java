@@ -4,15 +4,11 @@ package skype.teach.np.zoo;
  * @author NPrilepa
  */
 public class Animal {
-    boolean pet;
-    String voice;
-    String eat;
+    private boolean pet;
+    private String voice;
+    private String eat;
 
-    public Animal() {
-
-    }
-
-    public Animal(boolean pet, String voice, String eat) {
+    protected Animal(boolean pet, String voice, String eat) {
         this.voice = voice;
         this.eat = eat;
         this.pet = pet;
