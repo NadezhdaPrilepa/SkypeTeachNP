@@ -1,9 +1,11 @@
 package skype.teach.np.registration;
 
 /**
+ * Class implements INpUser methods
+ * Java Bean class
  * @author NPrilepa
  */
-public class NpUser implements INpUser{
+public class NpUser implements INpUser {
     private int id;
     private String login;
     private String pass;
@@ -39,16 +41,4 @@ public class NpUser implements INpUser{
     }
 }
 
-interface INpUser {
-    public int getId();
 
-    public void setId(int id);
-
-    public String getLogin();
-
-    public void setLogin(String login);
-
-    public void setPass(String pass);
-
-    public String getPass();
-}

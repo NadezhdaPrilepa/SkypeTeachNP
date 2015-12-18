@@ -4,6 +4,7 @@ package skype.teach.np.registration;
 import java.util.*;
 
 /**
+ * Class implements INpUserDAO methods
  * @author NPrilepa
  */
 
@@ -41,6 +42,15 @@ public class NpUserDAO implements INpUserDAO {
 
 
     public boolean isValid(String login, String pass) {
+
+        if (login==null||login.isEmpty())
+        {
+            return false;
+        }
+        if (pass==null||pass.isEmpty())
+        {
+            return false;
+        }
         if (login.length() < 5) {
             return false;
         }
@@ -55,10 +65,4 @@ public class NpUserDAO implements INpUserDAO {
 
 }
 
-interface INpUserDAO {
-     Integer insert(String login, String pass);
 
-     INpUser select(String login, String pass);
-
-     boolean isValid(String login, String pass);
-}

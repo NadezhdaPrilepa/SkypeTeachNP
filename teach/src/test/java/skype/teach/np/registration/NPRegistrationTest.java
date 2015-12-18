@@ -6,15 +6,30 @@ import static org.junit.Assert.*;
  * @author NPrilepa
  */
 public class NPRegistrationTest {
+    private INpRegistration npr = new NpRegistration();
+
 
     @Test
-    public void RegistrationTest()
-    {
-        NpRegistration npr = new NpRegistration();
+    public void registerUser_params_incorrect_test() {
+        assertSame("login must be incorrect", null, npr.registerUser("NP", "q1w2e3r4t5"));
+        assertSame("login must be incorrect", null, npr.registerUser(null, "q1w2e3r4t5"));
+        assertSame("login must be incorrect", null, npr.registerUser("", "q1w2e3r4t5"));
+        assertSame("Pass must be incorrect", null, npr.registerUser("@NPrilepa", "q1w2e3r4t5"));
+        assertSame("Pass must be incorrect", null, npr.registerUser("%NPrilepa", "q1w2e3r4t5"));
+        assertSame("Pass must be incorrect", null, npr.registerUser("NPrilepa", "q1w2"));
+        assertSame("Pass must be incorrect", null, npr.registerUser("NPrilepa", null));
+        assertSame("Pass must be incorrect", null, npr.registerUser("NPrilepa", ""));
+        assertSame("Pass and Login must be incorrect", null, npr.registerUser(null, null));
+        assertSame("Pass and Login must be incorrect", null, npr.registerUser("", ""));
 
-        assertSame("login must be incorrect",null,npr.Registration("NP","q1w2e3r4t5"));
-        assertSame("Pass must be incorrect", null, npr.Registration("NPrilepa", "q1w2"));
-        assertSame("Login and pass is used", 0, npr.Registration("NPrilepa", "q1w2e3r4t5"));
-        assertSame("Registration successful", 3, npr.Registration("IIvanov", "qwerty"));
     }
+    @Test
+    public void registerUser_user_used_test() {
+        assertSame("Login and pass is used", 0, npr.registerUser("NPrilepa", "q1w2e3r4t5"));
+    }
+    @Test
+    public void registerUser_successful_register_test() {
+        assertSame("Registration successful", 3, npr.registerUser("IIvanov", "qwerty"));
+    }
+
 }
