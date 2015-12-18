@@ -28,7 +28,7 @@ public class NpUserDAO implements INpUserDAO {
     }
 
 
-    public INpUser select(String login, String pass) {
+    public INpUser select(String login) {
         Iterator i = users.values().iterator();
         while (i.hasNext()) {
             INpUser user = (INpUser) i.next();
@@ -38,31 +38,6 @@ public class NpUserDAO implements INpUserDAO {
         }
         return null;
     }
-
-
-
-    public boolean isValid(String login, String pass) {
-
-        if (login==null||login.isEmpty())
-        {
-            return false;
-        }
-        if (pass==null||pass.isEmpty())
-        {
-            return false;
-        }
-        if (login.length() < 5) {
-            return false;
-        }
-        if (pass.length() < 5) {
-            return false;
-        }
-        if (login.startsWith("@") || login.startsWith("%")) {
-            return false;
-        }
-        return true;
-    }
-
 }
 
 

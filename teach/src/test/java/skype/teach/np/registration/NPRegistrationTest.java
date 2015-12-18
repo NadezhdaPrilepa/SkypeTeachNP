@@ -10,15 +10,21 @@ public class NPRegistrationTest {
 
 
     @Test
-    public void registerUser_params_incorrect_test() {
+    public void registerUser_login_incorrect_test() {
         assertSame("login must be incorrect", null, npr.registerUser("NP", "q1w2e3r4t5"));
         assertSame("login must be incorrect", null, npr.registerUser(null, "q1w2e3r4t5"));
         assertSame("login must be incorrect", null, npr.registerUser("", "q1w2e3r4t5"));
+    }
+    @Test
+    public void registerUser_pass_incorrect_test() {
         assertSame("Pass must be incorrect", null, npr.registerUser("@NPrilepa", "q1w2e3r4t5"));
         assertSame("Pass must be incorrect", null, npr.registerUser("%NPrilepa", "q1w2e3r4t5"));
         assertSame("Pass must be incorrect", null, npr.registerUser("NPrilepa", "q1w2"));
         assertSame("Pass must be incorrect", null, npr.registerUser("NPrilepa", null));
         assertSame("Pass must be incorrect", null, npr.registerUser("NPrilepa", ""));
+    }
+    @Test
+    public void registerUser_login_and_pass_incorrect_test() {
         assertSame("Pass and Login must be incorrect", null, npr.registerUser(null, null));
         assertSame("Pass and Login must be incorrect", null, npr.registerUser("", ""));
 
@@ -29,7 +35,7 @@ public class NPRegistrationTest {
     }
     @Test
     public void registerUser_successful_register_test() {
-        assertSame("Registration successful", 3, npr.registerUser("IIvanov", "qwerty"));
+        assertSame("Registration successful", 3, npr.registerUser("IIvanov", "q1w2e3r4t5"));
     }
 
 }
