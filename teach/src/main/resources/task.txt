@@ -1,3 +1,10 @@
+ lesson#11
+  1. zooTest change assertEquals to assertTrue(False)
+  2. zooTest coverage 100%
+  3. user registration create test classes for each classes and interfaces
+  4. create interfaces for calculator and tests
+  5. create maven module calculator
+
  lesson#10
   1. Restruct ZooTest(split ZooTest method into test case methods)
   2. Restruct user registration Test
