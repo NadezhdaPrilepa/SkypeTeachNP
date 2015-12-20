@@ -1,8 +1,6 @@
 package skype.teach.np.registration;
 
 /**
- * Class implements INpUser methods
- * Java Bean class
  * @author NPrilepa
  */
 public class NpUser implements INpUser {

@@ -4,7 +4,6 @@ package skype.teach.np.registration;
 import java.util.*;
 
 /**
- * Class implements INpUserDAO methods
  * @author NPrilepa
  */
 

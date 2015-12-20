@@ -3,7 +3,6 @@ package skype.teach.np.registration;
 import java.util.Map;
 
 /**
- * Class implements INpRegistration methods
  * @author NPrilepa
  */
 public class NpRegistration implements INpRegistration {

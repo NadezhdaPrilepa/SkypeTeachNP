@@ -12,9 +12,9 @@ interface INpUserDAO {
      * If some params are not defined, the method returns null.
      *
      * @param login Login of user.
-     *              Can not be null or empty or invalid length
+     *              Can not be null or empty or invalid length(<5) or starts from incorrect symbol ("@","%")
      * @param pass  Password of user.
-     *              Can not be null or empty or invalid length
+     *              Can not be null or empty or invalid length(<5)
      * @return id of the created user or null if the user was not created
      */
     Integer insert(String login, String pass);
