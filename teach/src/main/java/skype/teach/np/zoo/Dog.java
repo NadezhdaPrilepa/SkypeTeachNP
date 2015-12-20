@@ -7,8 +7,8 @@ public class Dog extends Wolf {
     public static final String VOICE_DOG = "gav";
     public static final String EAT_DOG = "dog food";
 
-    public Dog() {
-        super(true, VOICE_DOG, EAT_DOG);
+    public Dog(String name) {
+        super(name,true, VOICE_DOG, EAT_DOG);
     }
 
     @Override

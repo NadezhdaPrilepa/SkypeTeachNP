@@ -5,30 +5,41 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**class working with animal collection
+/**
+ * class working with animal collection
+ *
  * @author NPrilepa
  */
 public class Zoo {
     private Collection zoo = new CopyOnWriteArrayList();
 
     /**
-     * @return int count of animal collection
+     * @return members of animal collection, if count of members=0,
+     * return empty string
      */
-    public int getAnimalCount() {
-
-        return this.zoo.size();
+    public String getAnimal() {
+        String animals = "";
+        Iterator i = this.zoo.iterator();
+        while (i.hasNext()) {
+            Animal animal = (Animal) i.next();
+            animals = animals + (animals.isEmpty() ? "" : ",") + animal.getName();
+        }
+        return animals;
     }
 
     /**
      * add animal to animal collection
+     *
      * @param animal
      */
     public void addAnimal(Animal animal) {
-        this.zoo.add(animal);
+        if (animal != null)
+            this.zoo.add(animal);
     }
 
     /**
      * remove animal from animal collection
+     *
      * @param animal
      */
     public void removeAnimal(Animal animal) {
@@ -38,6 +49,7 @@ public class Zoo {
     /**
      * overload method removeAnimal(Animal animal)
      * if animal = Cat - nothing to do
+     *
      * @param animal
      */
     public void removeAnimal(Cat animal) {
@@ -46,6 +58,7 @@ public class Zoo {
 
     /**
      * Check if collection of animals contains cat
+     *
      * @return true if cat exists in collection
      */
     public boolean hasCat() {
@@ -85,6 +98,7 @@ public class Zoo {
 
     /**
      * Check, if all animals of animal collection is Pet, return true
+     *
      * @return
      */
     public boolean isPetZoo() {
@@ -100,6 +114,7 @@ public class Zoo {
 
     /**
      * concat to String voices of all members animal collection
+     *
      * @return String like "Zoo voice is: 'gav' 'meau'", if there is no members in collection return "Zoo voice is:"
      */
     public String zooVoice() {
@@ -115,6 +130,7 @@ public class Zoo {
 
     /**
      * concat to String eat of all members animal collection
+     *
      * @return String like "Zoo eat is: meat milk", if there is no members in collection return "Zoo eat is:"
      */
     public String zooEat() {

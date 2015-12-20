@@ -3,15 +3,17 @@ package skype.teach.np.zoo;
 /**
  * @author NPrilepa
  */
-public class Animal {
+public abstract class Animal {
     private boolean pet;
     private String voice;
     private String eat;
+    private String name;
 
-    protected Animal(boolean pet, String voice, String eat) {
+    protected Animal(String name, boolean pet, String voice, String eat) {
         this.voice = voice;
         this.eat = eat;
         this.pet = pet;
+        this.name = name;
     }
 
     public boolean isPet() {
@@ -33,10 +35,10 @@ public class Animal {
         this.voice = voice;
     }
 
+    public abstract Animal sick();
 
-    public Animal sick() {
-        return this;
+    public String getName() {
+        return name;
     }
-
 
 }

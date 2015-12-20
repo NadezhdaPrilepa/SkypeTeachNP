@@ -10,43 +10,50 @@ import static org.junit.Assert.*;
 public class ZooTest {
     Zoo zooBerlin = new Zoo();
 
-    Wolf wf = new Wolf();
-    Dog dog = new Dog();
-    Cat cat = new Cat();
+    Wolf wf = new Wolf("wolf");
+    Dog dog = new Dog("dog");
+    Cat cat = new Cat("cat");
 
     @Test
-    public void addAnimalTest() {
+    public void addAnimal() {
         zooBerlin.addAnimal(cat);
-        assertSame("zooBerlin.addAnimal()", 1, zooBerlin.getAnimalCount());
+        zooBerlin.addAnimal(null);
+        assertEquals("zooBerlin.addAnimal()", "cat", zooBerlin.getAnimal());
     }
+
     @Test
-    public void removeAnimalTest() {
+    public void removeAnimal() {
         zooBerlin.addAnimal(dog);
         zooBerlin.removeAnimal(dog);
-        assertSame("zooBerlin.removeAnimal()", 0, zooBerlin.getAnimalCount());
+        assertEquals("zooBerlin.removeAnimal()", "", zooBerlin.getAnimal());
         zooBerlin.removeAnimal(dog);
-        assertSame("zooBerlin.removeAnimal()", 0, zooBerlin.getAnimalCount());
+        assertEquals("zooBerlin.removeAnimal()", "", zooBerlin.getAnimal());
+        zooBerlin.removeAnimal(null);
+        assertEquals("zooBerlin.removeAnimal()", "", zooBerlin.getAnimal());
     }
+
     @Test
-    public void removeAnimalCatTest() {
+    public void removeAnimalCat() {
         zooBerlin.addAnimal(cat);
         zooBerlin.removeAnimal(cat);
-        assertSame("zooBerlin.removeAnimal()", 1, zooBerlin.getAnimalCount());
+        assertEquals("zooBerlin.removeAnimal()", "cat", zooBerlin.getAnimal());
         zooBerlin.removeAnimal((Animal) cat);
-        assertSame("zooBerlin.removeAnimal()", 0, zooBerlin.getAnimalCount());
+        assertEquals("zooBerlin.removeAnimal()", "", zooBerlin.getAnimal());
 
     }
+
     @Test
-    public void isPetZooTest() {
+    public void isPetZoo() {
         zooBerlin.addAnimal(cat);
-        assertEquals("zooBerlin.isPetZoo()", true, zooBerlin.isPetZoo());
+        assertTrue("zooBerlin.isPetZoo()", zooBerlin.isPetZoo());
         zooBerlin.addAnimal(wf);
-        assertEquals("zooBerlin.isPetZoo()", false, zooBerlin.isPetZoo());
+        assertFalse("zooBerlin.isPetZoo()", zooBerlin.isPetZoo());
         zooBerlin.addAnimal(dog);
-        assertEquals("zooBerlin.isPetZoo()", false, zooBerlin.isPetZoo());
+        assertFalse("zooBerlin.isPetZoo()", zooBerlin.isPetZoo());
     }
+
     @Test
-    public void zooVoiceTest() {
+    public void zooVoice() {
         zooBerlin.addAnimal(wf);
         zooBerlin.addAnimal(dog);
         zooBerlin.addAnimal(cat);
@@ -56,56 +63,64 @@ public class ZooTest {
         zooBerlin.removeAnimal(dog);
         assertEquals("zooBerlin.zooVoice()", "Zoo voice is: 'meau'", zooBerlin.zooVoice());
     }
+
     @Test
-    public void zooEatTest() {
+    public void zooEat() {
         zooBerlin.addAnimal(wf);
         zooBerlin.addAnimal(dog);
         zooBerlin.addAnimal(cat);
         assertEquals("zooBerlin.zooVoice()", "Zoo eat is: meat dog food milk", zooBerlin.zooEat());
-        zooBerlin.removeAnimal((Animal)cat);
+        zooBerlin.removeAnimal((Animal) cat);
         assertEquals("zooBerlin.zooVoice()", "Zoo eat is: meat dog food", zooBerlin.zooEat());
         zooBerlin.removeAnimal(wf);
         assertEquals("zooBerlin.zooVoice()", "Zoo eat is: dog food", zooBerlin.zooEat());
 
     }
+
     @Test
-    public void hasCatTest() {
+    public void hasCat() {
         zooBerlin.addAnimal(wf);
-        assertEquals("zooMoscow.getCat()", false, zooBerlin.hasCat());
+        assertFalse("zooMoscow.getCat()", zooBerlin.hasCat());
         zooBerlin.addAnimal(cat);
-        assertEquals("zooMoscow.getCat()", true, zooBerlin.hasCat());
+        assertTrue("zooMoscow.getCat()", zooBerlin.hasCat());
         zooBerlin.removeAnimal(cat);
-        assertEquals("zooMoscow.getCat()", true, zooBerlin.hasCat());
+        assertTrue("zooMoscow.getCat()", zooBerlin.hasCat());
         zooBerlin.removeAnimal((Animal) cat);
-        assertEquals("zooMoscow.getCat()", false, zooBerlin.hasCat());
+        assertFalse("zooMoscow.getCat()", zooBerlin.hasCat());
     }
+
     @Test
-      public void removeSickAnimalTest() {
+    public void removeSickAnimal() {
         zooBerlin.addAnimal(wf);
         zooBerlin.addAnimal(dog);
         zooBerlin.addAnimal(cat);
         wf.setVoice("gav");
         zooBerlin.removeSickAnimal();
-        assertSame("zooBerlin.removeSickAnimal()", 2, zooBerlin.getAnimalCount());
+        assertEquals("zooBerlin.removeSickAnimal()", "dog,cat", zooBerlin.getAnimal());
         cat.setVoice("gav");
         zooBerlin.removeSickAnimal();
-        assertSame("zooBerlin.removeSickAnimal()", 1, zooBerlin.getAnimalCount());
+        assertEquals("zooBerlin.removeSickAnimal()", "dog", zooBerlin.getAnimal());
+        dog.setVoice("meau");
+        zooBerlin.removeSickAnimal();
+        assertEquals("zooBerlin.removeSickAnimal()", "", zooBerlin.getAnimal());
     }
+
     @Test
-    public void removeSickAnimalTest_() {
+    public void removeSickAnimal_() {
         zooBerlin.addAnimal(wf);
         zooBerlin.addAnimal(dog);
         zooBerlin.addAnimal(cat);
         zooBerlin.removeSickAnimal();
-        assertSame("zooBerlin.removeSickAnimal()", 3, zooBerlin.getAnimalCount());
+        assertEquals("zooBerlin.removeSickAnimal()", "wolf,dog,cat", zooBerlin.getAnimal());
     }
+
     @Test
-    public void closeZooTest() {
+    public void closeZoo() {
         zooBerlin.addAnimal(wf);
         zooBerlin.addAnimal(dog);
         zooBerlin.addAnimal(cat);
         zooBerlin.closeZoo();
-        assertSame("zooBerlin.closeZoo()",0, zooBerlin.getAnimalCount());
+        assertEquals("zooBerlin.closeZoo()", "", zooBerlin.getAnimal());
     }
 
 }
