@@ -4,22 +4,29 @@ package skype.teach.np.zoo;
  * @author NPrilepa
  */
 public class Wolf extends Animal {
-    boolean pet = false;
+
+    public static final String VOICE_WOLF = "u-u-u";
+    public static final String EAT_WOLF = "meat";
 
 
-    @Override
-    public boolean isPetAnimal() {
-        return false;
+    public Wolf(String name) {
+
+        this(name, false, VOICE_WOLF, EAT_WOLF);
     }
-    @Override
-    public String voice()
-    {
-        return "u-u-u";
+
+    protected Wolf(String name, boolean pet, String voice, String eat) {
+        super(name, pet, voice, eat);
     }
+
     @Override
-    public String eat()
-    {
-        return "meat";
+    public Wolf sick() {
+        if (!getVoice().equals(VOICE_WOLF)) {
+            return this;
+        }
+        return null;
     }
+
+
+
 
 }
