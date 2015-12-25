@@ -1,50 +1,63 @@
-lesson#1
-1. Create file with main git command
-(pull, push,checkout, branch, add, rm, commit, status, log, fetch)
-2. Add dependencies to maven (jUnit, google guava)
+ lesson#11
+  1. zooTest change assertEquals to assertTrue(False)
+  2. zooTest coverage 100%
+  3. user registration create test classes for each classes and interfaces
+  4. create interfaces for calculator and tests
+  5. create maven module calculator
+
+ lesson#10
+  1. Restruct ZooTest(split ZooTest method into test case methods)
+  2. Restruct user registration Test
+  3. Move Interfaces to separate files(user registration)
+  4. Create comments(contract) for all API classes and  methods
+
+ lesson#9
+  1. Learn git command stash
+  2. Try to use git stash
+  3. Describe rules of init blocks(fields,static fields, final fields)
+  4. - Design use case with user registration + tests
+
+ lesson#8
+  1. Describe rules for JavaBean
+  2. Describe rules for JAVA names conventions
+  3. Describe constants in JAVA
+ lesson#7
+  1. - Create class Animal with overload methods
+  2. - Create class Dog and Cat with overload and override methods
+  3. - Create class Wolf(extends Dog) with overload and override methods
+  4. - Create class Zoo with using classes 1-3(overload and override methods)
+  5. Describe overload rules
+  6. Describe override rules
+ lesson#6
+  1. + Create two branches with conflicts and merge both of them(resolving conflicts using Idea)
+  2. + Describe access modifiers (accessible place, usage pattern)
+  3. + Refactor NpAddress(move equalsAddress to separate package class with adding Unit test for it)
+  4. + Describe requirements for Calculator
+  5. + Analyse requirements for calculator and describe entities
+  lesson#5
+  1. Learn merge git command
+  2. 38 line Find lib Guava utility method For Comparison Objects
+  3. Override HashCode() for Address(create + pass test)
+  4. Describe rules between equals() and hashCode()
+ lesson#4
+  1. Download Oracle Java Convention and read
+  2. Create class Address and define method Equals for it(many params)
+  3. Test Address.equals using JUnit(100% coverage)
+  4. Read info about JUnit assert methods
+ lesson#3
+  1. Create cycle of objects (minimal count of objects)
+  2. Cycle of objects should be possible for garbage collector
+  3. Describe all public methods of Object
 
 lesson#2
  1. Create dependencyManagement
  2. Right work with mvn in console
  3. Learn byte code commands
 
- lesson#3
- 1. Create cycle of objects (minimal count of objects)
- 2. Cycle of objects should be possible for garbage collector
- 3. Describe all public methods of Object
-
- lesson#4
- 1. Download Oracle Java Convention and read
- 2. Create class Address and define method Equals for it(many params)
- 3. Test Address.equals using JUnit(100% coverage)
- 4. Read info about JUnit assert methods
-
- lesson#5
- 1. Learn merge git command
- 2. 38 line Find lib Guava utility method For Comparison Objects
- 3. Override HashCode() for Address(create + pass test)
- 4. Describe rules between equals() and hashCode()
-
- lesson#6
- 1. + Create two branches with conflicts and merge both of them(resolving conflicts using Idea)
- 2. + Describe access modifiers (accessible place, usage pattern)
- 3. + Refactor NpAddress(move equalsAddress to separate package class with adding Unit test for it)
- 4. + Describe requirements for Calculator
- 5. + Analyse requirements for calculator and describe entities
-
- lesson#7
- 1. - Create class Animal with overload methods
- 2. - Create class Dog and Cat with overload and override methods
- 3. - Create class Wolf(extends Dog) with overload and override methods
- 4. - Create class Zoo with using classes 1-3(overload and override methods)
- 5. Describe overload rules
- 6. Describe override rules
-
- lesson#8
- 1. Describe rules for JavaBean
- 2. Describe rules for JAVA names conventions
- 3. Describe constants in JAVA
-
+lesson#1
+1. Create file with main git command
+(pull, push,checkout, branch, add, rm, commit, status, log, fetch)
+2. Add dependencies to maven (jUnit, google guava)
 
 
 
