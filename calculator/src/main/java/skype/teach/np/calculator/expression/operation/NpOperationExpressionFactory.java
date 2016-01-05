@@ -2,7 +2,7 @@ package skype.teach.np.calculator.expression.operation;
 
 /**
  * Factory(List with operations instance of NpOperationExpressionItem) of arithmetic operations.
- * Factory contains {@link NpAddOperation},{@link NpMultiOperation},{@link NpDivisionOperation},{@link NpMultiOperation}
+ * Factory contains default arithmetic operation {@link NpAddOperation},{@link NpMultiOperation},{@link NpDivisionOperation},{@link NpMultiOperation}
  * @author NPrilepa
  */
 public interface NpOperationExpressionFactory {
