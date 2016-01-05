@@ -1,9 +1,12 @@
+ lesson#12
+  1. Add test mockito dependency to pom.xml
+  2. Learn mockito API
+
  lesson#11
   1. zooTest change assertEquals to assertTrue(False)
   2. zooTest coverage 100%
   3. user registration create test classes for each classes and interfaces
-  TODO: create interfaces for calculator and tests
-  5. create maven module calculator
+  4. create maven module calculator
 
  lesson#10
   1. Restruct ZooTest(split ZooTest method into test case methods)

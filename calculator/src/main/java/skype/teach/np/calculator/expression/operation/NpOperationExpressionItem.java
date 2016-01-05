@@ -1,8 +1,8 @@
 package skype.teach.np.calculator.expression.operation;
 
-import skype.teach.np.calculator.exception.NpInCorrectOperandException;
+import skype.teach.np.calculator.exception.NpCalculationOperationException;
 import skype.teach.np.calculator.exception.NpNullPointerOperatorCalculatorException;
-import skype.teach.np.calculator.exception.NpSizeOfOperandsCalculatorException;
+import skype.teach.np.calculator.exception.NpInvalidSizeOfOperandsCalculatorException;
 import skype.teach.np.calculator.expression.NpExpressionItem;
 import skype.teach.np.calculator.expression.NpOperandExpressionItem;
 
@@ -41,10 +41,10 @@ public interface NpOperationExpressionItem extends NpExpressionItem {
      *                 to {@link NpOperationExpressionItem#getOperandsNumber()}
      * @return NpOperandExpressionItem result of operation
      * @throws NpNullPointerOperatorCalculatorException If operand not defined or null</nb>
-     * @throws NpSizeOfOperandsCalculatorException      If Size of the list operands not equal {@link NpOperationExpressionItem#getOperandsNumber()}</nb>
+     * @throws NpInvalidSizeOfOperandsCalculatorException      If Size of the list operands not equal {@link NpOperationExpressionItem#getOperandsNumber()}</nb>
      *
      */
-    NpOperandExpressionItem doCalculate(List<NpOperandExpressionItem> operands) throws NpNullPointerOperatorCalculatorException, NpSizeOfOperandsCalculatorException;
+    NpOperandExpressionItem doCalculate(List<NpOperandExpressionItem> operands) throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException;
 
     /**
      * Get number of operands for operation
