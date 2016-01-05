@@ -10,9 +10,13 @@ public class NpOperationExpressionFactoryImpl implements NpOperationExpressionFa
 
     public NpOperationExpressionFactoryImpl() {
         NpAddOperation addOperation = new NpAddOperation();
-        this.operationsFactory.put(addOperation.getName(), addOperation);
+        registerOperation(addOperation);
         NpMultiOperation multiOperation =  new NpMultiOperation();
-        this.operationsFactory.put(multiOperation.getName(), new NpMultiOperation());
+        registerOperation(multiOperation);
+        NpDivisionOperation divisionOperation = new NpDivisionOperation();
+        registerOperation(divisionOperation);
+        NpSubtractionOperation subtractionOperation =  new NpSubtractionOperation();
+        registerOperation(subtractionOperation);
     }
 
     public NpOperationExpressionItem getOperationByName(String name) {
