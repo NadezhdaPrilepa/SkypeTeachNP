@@ -1,12 +1,13 @@
 package skype.teach.np.calculator.expression.operation;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author NPrilepa
  */
 public class NpOperationExpressionFactoryImpl implements NpOperationExpressionFactory {
-    private Map<String, NpOperationExpressionItem> operationsFactory;
+    private static Map<String, NpOperationExpressionItem> operationsFactory = new HashMap();
 
     public NpOperationExpressionFactoryImpl() {
         NpAddOperation addOperation = new NpAddOperation();
@@ -19,7 +20,8 @@ public class NpOperationExpressionFactoryImpl implements NpOperationExpressionFa
         registerOperation(subtractionOperation);
     }
 
-    public NpOperationExpressionItem getOperationByName(String name) {
+    public final NpOperationExpressionItem getOperationByName(String name) {
+
         return operationsFactory.get(name);
     }
 

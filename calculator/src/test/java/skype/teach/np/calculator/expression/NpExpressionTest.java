@@ -1,6 +1,5 @@
 package skype.teach.np.calculator.expression;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import org.junit.Ignore;
 import org.junit.Test;
 import skype.teach.np.calculator.exception.NpInvalidExpressionCalculatorException;
@@ -69,6 +68,12 @@ public abstract class NpExpressionTest {
     }
 
     @Test(expected = NpInvalidExpressionCalculatorException.class)
+    public void parseExpressionString_simpleOperatorAndSingleGroup() throws NpInvalidExpressionCalculatorException {
+        NpExpression npexpr = createInstance();
+        npexpr.parseExpressionString("5(");
+    }
+
+    @Test(expected = NpInvalidExpressionCalculatorException.class)
     public void parseExpressionString_doubleOperatorBeforeOperand() throws NpInvalidExpressionCalculatorException {
         NpExpression npexpr = createInstance();
         npexpr.parseExpressionString("++5");
@@ -102,13 +107,6 @@ public abstract class NpExpressionTest {
     public void parseExpressionString_expectedOperandLastInsideGroup() throws NpInvalidExpressionCalculatorException {
         NpExpression npexpr = createInstance();
         npexpr.parseExpressionString("(5+)");
-    }
-
-
-    @Test(expected = NpInvalidExpressionCalculatorException.class)
-    public void parseExpressionString_expectedOperandFirstInsideGroup() throws NpInvalidExpressionCalculatorException {
-        NpExpression npexpr = createInstance();
-        npexpr.parseExpressionString("(-5)");
     }
 
     @Test(expected = NpInvalidExpressionCalculatorException.class)
@@ -259,6 +257,17 @@ public abstract class NpExpressionTest {
     }
 
     @Test
+    public void parseExpressionString_simpleOperandNegativeWithGroup() throws NpInvalidExpressionCalculatorException {
+        NpExpression npExprResult = createInstanceAndAssertSameObjects("simpleOperandNegativeWithGroup", "(-5)", 3);
+        NpExpressionItem item0 = npExprResult.getExpressionItems().get(0);
+        assertGroupOpen("simpleOperandNegativeWithGroup", item0);
+        NpExpressionItem item1 = npExprResult.getExpressionItems().get(1);
+        assertOperand("simpleOperandNegativeWithGroup", item1, -5);
+        NpExpressionItem item2 = npExprResult.getExpressionItems().get(2);
+        assertGroupClose("simpleOperandNegativeWithGroup", item2);
+    }
+
+    @Test
     public void parseExpressionString_simpleOperandFloat() throws NpInvalidExpressionCalculatorException {
         NpExpression npExprResult = createInstanceAndAssertSameObjects("simpleOperandFloat", "5.1", 1);
         NpExpressionItem item = npExprResult.getExpressionItems().get(0);
@@ -281,7 +290,7 @@ public abstract class NpExpressionTest {
         NpExpressionItem item1 = npExprResult.getExpressionItems().get(1);
         assertOperand("simpleOperandNegative", item1, 5);
         NpExpressionItem item2 = npExprResult.getExpressionItems().get(2);
-        assertGroupClose("simpleOperandInsideGroup", item0);
+        assertGroupClose("simpleOperandInsideGroup", item2);
     }
 
     @Test
@@ -292,7 +301,7 @@ public abstract class NpExpressionTest {
         NpExpressionItem item1 = npExprResult.getExpressionItems().get(1);
         assertOperand("simpleOperandInsideGroupWithSpace", item1, 5);
         NpExpressionItem item2 = npExprResult.getExpressionItems().get(2);
-        assertGroupClose("simpleOperandInsideGroupWithSpace", item0);
+        assertGroupClose("simpleOperandInsideGroupWithSpace", item2);
     }
 
     private void assertOperation(String method_name, NpExpressionItem expressionItem, String assertName) {
@@ -312,6 +321,17 @@ public abstract class NpExpressionTest {
         assertOperation("simpleOperation", item1, "+");
         NpExpressionItem item2 = npExprRes.getExpressionItems().get(2);
         assertOperand("simpleOperation", item2, 7);
+    }
+
+    @Test
+    public void parseExpressionString_simpleOperationNegative() throws NpInvalidExpressionCalculatorException {
+        NpExpression npExprRes = createInstanceAndAssertSameObjects("simpleOperationNegative", "-5+7", 3);
+        NpExpressionItem item = npExprRes.getExpressionItems().get(0);
+        assertOperand("simpleOperationNegative", item, -5);
+        NpExpressionItem item1 = npExprRes.getExpressionItems().get(1);
+        assertOperation("simpleOperationNegative", item1, "+");
+        NpExpressionItem item2 = npExprRes.getExpressionItems().get(2);
+        assertOperand("simpleOperationNegative", item2, 7);
     }
 
     @Test
@@ -376,7 +396,7 @@ public abstract class NpExpressionTest {
         NpExpressionItem item1 = npExprRes.getExpressionItems().get(1);
         assertOperation("SamePriorityOperations", item1, "+");
         NpExpressionItem item2 = npExprRes.getExpressionItems().get(2);
-        assertOperand("SamePriorityOperations", item, 7);
+        assertOperand("SamePriorityOperations", item2, 7);
         NpExpressionItem item3 = npExprRes.getExpressionItems().get(3);
         assertOperation("SamePriorityOperations", item3, "+");
         NpExpressionItem item4 = npExprRes.getExpressionItems().get(4);
