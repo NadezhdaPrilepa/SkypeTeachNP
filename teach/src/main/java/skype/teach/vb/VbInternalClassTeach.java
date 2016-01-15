@@ -35,6 +35,27 @@ class VbExternalClass {
         return obj;
     }
 
+    public void setCount()
+    {
+        class VbLocalClass{
+            public void setCount(int count)
+            {
+                VbExternalClass.this.count = count;
+            }
+        }
+        VbLocalClass vbLocal = new VbLocalClass();
+        vbLocal.setCount(10);
+    }
+    public static void printStaticStatistic()
+    {
+        class VbLocalClass{
+            public void setCount(int count)
+            {
+              //  VbExternalClass.this.count = count;
+            }
+        }
+    }
+
     public VbNonStaticInternalClass createInternalObj() {
         VbNonStaticInternalClass vbNonStaticInt = new VbNonStaticInternalClass();
         return vbNonStaticInt;

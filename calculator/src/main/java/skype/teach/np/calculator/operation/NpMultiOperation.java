@@ -1,8 +1,6 @@
-package skype.teach.np.calculator.expression.operation;
+package skype.teach.np.calculator.operation;
 
 import skype.teach.np.calculator.expression.NpOperandExpressionItem;
-
-import java.util.List;
 
 /**
  * Multi arithmetic operation. Required number of operands =2.
@@ -11,7 +9,7 @@ import java.util.List;
  * Priority(operation with the highest priority is performed first) =1
  * @author NPrilepa
  */
-public class NpMultiOperation extends NpAbstractOperationTwoOperands implements  NpOperationExpressionItem{
+public class NpMultiOperation extends NpAbstractOperationTwoOperands{
 
     public NpMultiOperation() {
         super("*",1);

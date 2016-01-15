@@ -1,4 +1,4 @@
-package skype.teach.np.calculator.expression.operation;
+package skype.teach.np.calculator.operation;
 
 import skype.teach.np.calculator.exception.NpCalculationOperationException;
 import skype.teach.np.calculator.exception.NpInvalidSizeOfOperandsCalculatorException;
@@ -15,22 +15,19 @@ import java.util.List;
  * @author NPrilepa
  */
 
-public class NpDivisionOperation extends NpAbstractOperationTwoOperands implements NpOperationExpressionItem {
+public class NpDivisionOperation extends NpAbstractOperationTwoOperands {
     public NpDivisionOperation() {
         super("/",1);
     }
 
     @Override
     protected boolean isValidOperands(List<NpOperandExpressionItem> operands) throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
-        if (super.isValidOperands(operands)) {
-
+        super.isValidOperands(operands);
             NpOperandExpressionItem operand = operands.get(1);
             if (operand.getValue() == 0) {
                 throw new NpCalculationOperationException();  //Line-2
             }
-            return true;
-        }
-        return false;
+        return true;
     }
 
     @Override

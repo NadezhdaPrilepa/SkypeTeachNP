@@ -1,14 +1,13 @@
-package skype.teach.np.calculator.expression.operation;
+package skype.teach.np.calculator.operation;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author NPrilepa
  */
 public class NpOperationExpressionFactoryImpl implements NpOperationExpressionFactory {
-    private static Map<String, NpOperationExpressionItem> operationsFactory = new HashMap();
-
+    private Map<String, NpOperationExpressionItem> operationsFactory = new HashMap();
+    private List<String> names = new ArrayList<String>();
     public NpOperationExpressionFactoryImpl() {
         NpAddOperation addOperation = new NpAddOperation();
         registerOperation(addOperation);
@@ -27,5 +26,11 @@ public class NpOperationExpressionFactoryImpl implements NpOperationExpressionFa
 
     public void registerOperation(NpOperationExpressionItem operation) {
         this.operationsFactory.put(operation.getName(), operation);
+    }
+
+    public Set<String> getNames()
+    {
+        return this.operationsFactory.keySet();
+
     }
 }

@@ -1,4 +1,4 @@
-package skype.teach.np.calculator.expression.operation;
+package skype.teach.np.calculator.operation;
 
 import org.junit.Test;
 import skype.teach.np.calculator.exception.NpCalculationOperationException;
@@ -19,8 +19,9 @@ public class NpMultiOperationTest extends NpOperationExpressionItemTest {
     protected NpOperationExpressionItem createInstance() {
         return new NpMultiOperation();
     }
+
     @Test(expected = NpInvalidSizeOfOperandsCalculatorException.class)
-    public void doCalculate_sizeOfOperandsInvalid() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
+    public void doCalculate_sizeOfOperandsInvalid() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
         NpOperationExpressionItem npOperationExpressionItem = createInstance();
 
         List listOfOperandExpressionItem = new ArrayList();
@@ -31,8 +32,9 @@ public class NpMultiOperationTest extends NpOperationExpressionItemTest {
         NpOperandExpressionItem npOperandExceptionItem = npOperationExpressionItem.doCalculate(listOfOperandExpressionItem);
         //}
     }
+
     @Test(expected = NpInvalidSizeOfOperandsCalculatorException.class)
-    public void doCalculate_sizeOfOperandsInvalidMore() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
+    public void doCalculate_sizeOfOperandsInvalidMore() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
         NpOperationExpressionItem npOperationExpressionItem = createInstance();
 
         List listOfOperandExpressionItem = new ArrayList();
@@ -46,41 +48,44 @@ public class NpMultiOperationTest extends NpOperationExpressionItemTest {
         //}
     }
 
-    public void assertEqualsCalculate(String method_name, double operand1, double operand2, double assertResult) throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
+    public void assertEqualsCalculate(String method_name, double operand1, double operand2, double assertResult, int assertPriority, String assertName) throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
         NpOperationExpressionItem npOperationExpressionItem = createInstance();
         List<NpOperandExpressionItem> listOfOperandExpressionItem = new ArrayList();
         listOfOperandExpressionItem.add(createInstanceOperand(operand1));
         listOfOperandExpressionItem.add(createInstanceOperand(operand2));
         NpOperandExpressionItem npOperandExceptionItem = npOperationExpressionItem.doCalculate(listOfOperandExpressionItem);
         assertEquals("value of result of calculate " + method_name, assertResult, npOperandExceptionItem.getValue(), 0.000001);
+        assertEquals("priority of operation " + method_name, assertPriority, npOperationExpressionItem.getPriority());
+        assertEquals("name of operation " + method_name, assertName, npOperationExpressionItem.getName());
     }
 
     @Test
-    public void doCalculate_simpleOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
-        assertEqualsCalculate("simpleOperands", 4, 5, 20);
-    }
-    @Test
-    public void doCalculate_zeroOperand() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
-        assertEqualsCalculate("zeroOperand", 0, 5, 0);
+    public void doCalculate_simpleOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
+        assertEqualsCalculate("simpleOperands", 4, 5, 20, 1, "*");
     }
 
     @Test
-    public void doCalculate_zeroOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
-        assertEqualsCalculate("zeroOperands", 0, 0, 0);
+    public void doCalculate_zeroOperand() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
+        assertEqualsCalculate("zeroOperand", 0, 5, 0, 1, "*");
     }
 
     @Test
-    public void doCalculate_floatOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
-        assertEqualsCalculate("floatOperands", 1.3, 5.4, 7.02);
+    public void doCalculate_zeroOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
+        assertEqualsCalculate("zeroOperands", 0, 0, 0, 1, "*");
     }
 
     @Test
-    public void doCalculate_negativeOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
-        assertEqualsCalculate("negativeOperands", -4, -4, 16);
+    public void doCalculate_floatOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
+        assertEqualsCalculate("floatOperands", 1.3, 5.4, 7.02, 1, "*");
     }
 
     @Test
-    public void doCalculate_negativeOneOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
-        assertEqualsCalculate("negativeOneOperands", -4, 4, -16);
+    public void doCalculate_negativeOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
+        assertEqualsCalculate("negativeOperands", -4, -4, 16, 1, "*");
+    }
+
+    @Test
+    public void doCalculate_negativeOneOperands() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
+        assertEqualsCalculate("negativeOneOperands", -4, 4, -16, 1, "*");
     }
 }

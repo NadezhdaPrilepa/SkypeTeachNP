@@ -1,4 +1,4 @@
-package skype.teach.np.calculator.expression.operation;
+package skype.teach.np.calculator.operation;
 
 import skype.teach.np.calculator.exception.NpCalculationOperationException;
 import skype.teach.np.calculator.exception.NpNullPointerOperatorCalculatorException;

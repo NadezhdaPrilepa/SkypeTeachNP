@@ -1,4 +1,4 @@
-package skype.teach.np.calculator.expression;
+package skype.teach.np.calculator;
 import org.junit.Ignore;
 import org.junit.Test;
 import skype.teach.np.calculator.NpCalculator;
@@ -112,12 +112,6 @@ public abstract class NpCalculatorTest {
     public void calculate_expectedOperandLastInsideGroup() throws NpCalculatorException {
         NpCalculator npCalculator = createInstance();
         npCalculator.calculate("(5+)");
-    }
-
-    @Test(expected = NpCalculatorException.class)
-    public void calculate_expectedOperandFirst() throws NpCalculatorException {
-        NpCalculator npCalculator = createInstance();
-        npCalculator.calculate("-5");
     }
 
     @Test(expected = NpCalculatorException.class)

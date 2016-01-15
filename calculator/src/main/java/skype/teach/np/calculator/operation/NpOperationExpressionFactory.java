@@ -1,4 +1,4 @@
-package skype.teach.np.calculator.expression.operation;
+package skype.teach.np.calculator.operation;
 
 /**
  * Factory(List with operations instance of NpOperationExpressionItem) of arithmetic operations.

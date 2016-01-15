@@ -1,4 +1,4 @@
-package skype.teach.np.calculator.expression.operation;
+package skype.teach.np.calculator.operation;
 
 import org.junit.Ignore;
 import org.junit.Test;
