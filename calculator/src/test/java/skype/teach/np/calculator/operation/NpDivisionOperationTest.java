@@ -71,6 +71,8 @@ public class NpDivisionOperationTest extends NpOperationExpressionItemTest {
         //}
     }
 
+
+
     public void assertEqualsCalculate(String method_name, double operand1, double operand2, double assertResult, int assertPriority, String assertName) throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
         NpOperationExpressionItem npOperationExpressionItem = createInstance();
         List<NpOperandExpressionItem> listOfOperandExpressionItem = new ArrayList();

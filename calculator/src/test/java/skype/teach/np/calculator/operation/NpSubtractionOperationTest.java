@@ -20,6 +20,14 @@ public class NpSubtractionOperationTest extends NpOperationExpressionItemTest {
         return new NpSubtractionOperation();
     }
 
+    @Test(expected = NpNullPointerOperatorCalculatorException.class)
+    public void doCalculate_oneOperandEmpty() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
+        NpOperationExpressionItem npOperationExpressionItem = createInstance();
+        List<NpOperandExpressionItem> listOfOperandExpressionItem = new ArrayList();
+        listOfOperandExpressionItem.add(null);
+        listOfOperandExpressionItem.add(createInstanceOperand(5));
+        NpOperandExpressionItem npOperandExceptionItem = npOperationExpressionItem.doCalculate(listOfOperandExpressionItem);
+    }
     @Test(expected = NpInvalidSizeOfOperandsCalculatorException.class)
     public void doCalculate_sizeOfOperandsInvalid() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
         NpOperationExpressionItem npOperationExpressionItem = createInstance();

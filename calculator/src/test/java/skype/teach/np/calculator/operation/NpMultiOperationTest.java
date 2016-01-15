@@ -19,7 +19,14 @@ public class NpMultiOperationTest extends NpOperationExpressionItemTest {
     protected NpOperationExpressionItem createInstance() {
         return new NpMultiOperation();
     }
-
+    @Test(expected = NpNullPointerOperatorCalculatorException.class)
+    public void doCalculate_oneOperandEmpty() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException,NpCalculationOperationException {
+        NpOperationExpressionItem npOperationExpressionItem = createInstance();
+        List<NpOperandExpressionItem> listOfOperandExpressionItem = new ArrayList();
+        listOfOperandExpressionItem.add(null);
+        listOfOperandExpressionItem.add(createInstanceOperand(5));
+        NpOperandExpressionItem npOperandExceptionItem = npOperationExpressionItem.doCalculate(listOfOperandExpressionItem);
+    }
     @Test(expected = NpInvalidSizeOfOperandsCalculatorException.class)
     public void doCalculate_sizeOfOperandsInvalid() throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
         NpOperationExpressionItem npOperationExpressionItem = createInstance();
@@ -47,6 +54,7 @@ public class NpMultiOperationTest extends NpOperationExpressionItemTest {
         NpOperandExpressionItem npOperandExceptionItem = npOperationExpressionItem.doCalculate(listOfOperandExpressionItem);
         //}
     }
+
 
     public void assertEqualsCalculate(String method_name, double operand1, double operand2, double assertResult, int assertPriority, String assertName) throws NpNullPointerOperatorCalculatorException, NpInvalidSizeOfOperandsCalculatorException, NpCalculationOperationException {
         NpOperationExpressionItem npOperationExpressionItem = createInstance();

@@ -56,7 +56,6 @@ public class NpCalculatorImpl implements NpCalculator {
                     if (cmpPriority((NpOperationExpressionItem) npExpressionItem, (NpOperationExpressionItem) stack.peek()) <= 0) {
                         out.add(stack.pop());
                         continue;
-
                     }
                     break;
                 }
@@ -83,7 +82,6 @@ public class NpCalculatorImpl implements NpCalculator {
         Stack<NpExpressionItem> stack = new Stack<NpExpressionItem>();
         for (int i = 0; i < npExpressionReversePolishNotationList.size(); i++) {
             {
-
                 if (!isOperator(npExpressionReversePolishNotationList.get(i))) {
                     stack.push(npExpressionReversePolishNotationList.get(i));
                 } else {
