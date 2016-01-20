@@ -1,5 +1,9 @@
+ lesson#14
+ TODO: 1. Create class parametrized matrix of numbers and methods or some and multipled matrixes
+ and A^2
+ TODO: 2. Create tests
  lesson#13
-TODO 1. create description of internal classes
+  1. create description of internal classes
   2. create external comparator class and use it in sorting collections
  lesson#12
   1. Add test mockito dependency to pom.xml

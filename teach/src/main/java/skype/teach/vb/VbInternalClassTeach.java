@@ -24,6 +24,7 @@ public class VbInternalClassTeach {
         Object obj = vbExt.createAnonymousObj();
         System.out.println("call toString from anonymous class " + obj);
 
+
     }
 }
 
@@ -35,23 +36,20 @@ class VbExternalClass {
         return obj;
     }
 
-    public void setCount()
-    {
-        class VbLocalClass{
-            public void setCount(int count)
-            {
+    public void setCount() {
+        class VbLocalClass {
+            public void setCount(int count) {
                 VbExternalClass.this.count = count;
             }
         }
         VbLocalClass vbLocal = new VbLocalClass();
         vbLocal.setCount(10);
     }
-    public static void printStaticStatistic()
-    {
-        class VbLocalClass{
-            public void setCount(int count)
-            {
-              //  VbExternalClass.this.count = count;
+
+    public static void printStaticStatistic() {
+        class VbLocalClass {
+            public void setCount(int count) {
+                // VbExternalClass.this.count = count;
             }
         }
     }
@@ -72,7 +70,21 @@ class VbExternalClass {
         return obj;
     }
 
+    public void createAnonymousObjWithParams() {
+        class A {
+            A(int x, int y) {
+            }
+        }
+        Object obj = new A(2, 3) {
+            @Override
+            public String toString() {
+                return super.toString();
+            }
+        };
+    }
+
     public void addCount() {
+
         count++;
     }
 

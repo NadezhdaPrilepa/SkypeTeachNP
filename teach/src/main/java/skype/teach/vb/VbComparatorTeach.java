@@ -49,10 +49,10 @@ public class VbComparatorTeach {
             return value + "-" + year;
         }
     }
-   static class MoneyComparatorByValue implements Comparator
+  static class MoneyComparatorByValue implements Comparator<VbMoney>
    {
-       public int compare(Object m1, Object m2) {
-           return ((VbMoney)m1).value - ((VbMoney)m2).value;
+       public int compare(VbMoney m1, VbMoney m2) {
+           return m1.value - m2.value;
        }
    }
 
