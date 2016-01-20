@@ -21,7 +21,6 @@ public class NpMatrixTest {
     private NpMatrix<Double> createMatrixDoubleWithNull2x2() {
         NpMatrix<Double> A = new NpMatrix<Double>(2, 2);
         A.setElement(0, 0, 1.2);
-
         A.setElement(1, 0, 4.2);
         A.setElement(1, 1, 6.3);
         return A;
@@ -59,9 +58,16 @@ public class NpMatrixTest {
     }
 
     @Test(expected = NpMatrixException.class)
-    public void assertExceptionSumMatrix() throws NpMatrixException {
+    public void assertExceptionSumMatrixColsNotEqual() throws NpMatrixException {
         NpMatrix<Double> A = createMatrixDouble2x2();
         NpMatrix<Double> B = createMatrixDouble2x3();
+        NpMatrix<Double> C = A.sum(B, new NpDoubleOperation());
+    }
+
+    @Test(expected = NpMatrixException.class)
+    public void assertExceptionSumMatrixRowNotEqual() throws NpMatrixException {
+        NpMatrix<Double> A = createMatrixDouble2x2();
+        NpMatrix<Double> B = createMatrixDouble3x2();
         NpMatrix<Double> C = A.sum(B, new NpDoubleOperation());
     }
 
@@ -75,6 +81,13 @@ public class NpMatrixTest {
     @Test(expected = NpMatrixException.class)
     public void assertExceptionMultMatrixWithNull() throws NpMatrixException {
         NpMatrix<Double> A = createMatrixDoubleWithNull2x2();
+        NpMatrix<Double> B = createMatrixDoubleWithNull2x2();
+        NpMatrix<Double> C = A.mult(B, new NpDoubleOperation());
+    }
+
+    @Test(expected = NpMatrixException.class)
+    public void assertExceptionMultMatrixWithNull_() throws NpMatrixException {
+        NpMatrix<Double> A = createMatrixDouble2x2();
         NpMatrix<Double> B = createMatrixDoubleWithNull2x2();
         NpMatrix<Double> C = A.mult(B, new NpDoubleOperation());
     }

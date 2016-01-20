@@ -114,9 +114,7 @@ class NpDoubleOperation implements NpOperation<Double> {
         if (value1==null) {
             value1 = 0.0;
         }
-        if (value2==null) {
-            value2 = 0.0;
-        }
+
         return value1 + value2;
     }
 
@@ -130,9 +128,6 @@ class NpIntegerOperation implements NpOperation<Integer> {
     public Integer add(Integer value1, Integer value2) {
         if (value1==null) {
             value1 = 0;
-        }
-        if (value2==null) {
-            value2 = 0;
         }
         return value1 + value2;
     }
