@@ -92,40 +92,42 @@ public class NpMatrixTest {
         NpMatrix<Double> B = createMatrixDouble2x2_();
         NpMatrix<Double> C = A.sum(B, new NpDoubleOperation());
 
-        assertTrue("", C instanceof NpMatrix);
-        assertEquals("", C.getEl(0, 0), 6.4, 0.0001);
-        assertEquals("", C.getEl(0, 1), 5.6, 0.0001);
-        assertEquals("", C.getEl(1, 0), 11.4, 0.0001);
-        assertEquals("", C.getEl(1, 1), 7.6, 0.0001);
+        assertTrue("assertSumDoubleMatrix instance of A.sum(B, new NpDoubleOperation()) is NpMatrix", C instanceof NpMatrix);
+        assertEquals("assertSumDoubleMatrix c[0][0]", C.getEl(0, 0), 6.4, 0.0001);
+        assertEquals("assertSumDoubleMatrix c[0][1]", C.getEl(0, 1), 5.6, 0.0001);
+        assertEquals("assertSumDoubleMatrix c[1][0]", C.getEl(1, 0), 11.4, 0.0001);
+        assertEquals("assertSumDoubleMatrix c[1][1]", C.getEl(1, 1), 7.6, 0.0001);
 
     }
+
     @Test
     public void assertMultDoubleMatrix() throws NpMatrixException {
         NpMatrix<Double> A = createMatrixDouble2x2();
         NpMatrix<Double> B = createMatrixDouble2x3();
         NpMatrix<Double> C = A.mult(B, new NpDoubleOperation());
 
-        assertTrue("", C instanceof NpMatrix);
-        assertEquals("", C.getEl(0, 0), 11.1, 0.0001);
-        assertEquals("", C.getEl(0, 1), 17.25, 0.0001);
-        assertEquals("", C.getEl(0, 2), 27.75, 0.0001);
-        assertEquals("", C.getEl(1, 0), 31.5, 0.0001);
-        assertEquals("", C.getEl(1, 1), 49.35, 0.0001);
-        assertEquals("", C.getEl(1, 2), 80.85, 0.0001);
+        assertTrue("assertMultDoubleMatrix instance of A.mult(B, new NpDoubleOperation()) is NpMatrix", C instanceof NpMatrix);
+        assertEquals("assertMultDoubleMatrix c[0][0]", C.getEl(0, 0), 11.1, 0.0001);
+        assertEquals("assertMultDoubleMatrix c[0][1]", C.getEl(0, 1), 17.25, 0.0001);
+        assertEquals("assertMultDoubleMatrix c[0][2]", C.getEl(0, 2), 27.75, 0.0001);
+        assertEquals("assertMultDoubleMatrix c[1][0]", C.getEl(1, 0), 31.5, 0.0001);
+        assertEquals("assertMultDoubleMatrix c[1][1]", C.getEl(1, 1), 49.35, 0.0001);
+        assertEquals("assertMultDoubleMatrix c[1][2]", C.getEl(1, 2), 80.85, 0.0001);
 
 
     }
+
     @Test
     public void assertExpDoubleMatrix() throws NpMatrixException {
         NpMatrix<Double> A = createMatrixDouble2x2();
         NpMatrix<Double> B = createMatrixDouble2x2_();
         NpMatrix<Double> C = A.exp(new NpDoubleOperation());
 
-        assertTrue("", C instanceof NpMatrix);
-        assertEquals("", C.getEl(0, 0), 11.1, 0.0001);
-        assertEquals("", C.getEl(0, 1), 17.25, 0.0001);
-        assertEquals("", C.getEl(1, 0), 31.5, 0.0001);
-        assertEquals("", C.getEl(1, 1), 49.35, 0.0001);
+        assertTrue("assertExpDoubleMatrix instance of A.exp(new NpDoubleOperation()) is NpMatrix", C instanceof NpMatrix);
+        assertEquals("assertExpDoubleMatrix c[0][0]", C.getEl(0, 0), 11.1, 0.0001);
+        assertEquals("assertExpDoubleMatrix c[0][1]", C.getEl(0, 1), 17.25, 0.0001);
+        assertEquals("assertExpDoubleMatrix c[1][0]", C.getEl(1, 0), 31.5, 0.0001);
+        assertEquals("assertExpDoubleMatrix c[1][1]", C.getEl(1, 1), 49.35, 0.0001);
 
     }
 
@@ -190,40 +192,41 @@ public class NpMatrixTest {
         NpMatrix<Integer> B = createMatrixInt2x2_();
         NpMatrix<Integer> C = A.sum(B, new NpIntegerOperation());
 
-        assertTrue("", C instanceof NpMatrix);
-        assertEquals("", C.getEl(0, 0), 6, 0.001);
-        assertEquals("", C.getEl(0, 1), 5, 0.0001);
-        assertEquals("", C.getEl(1, 0), 11, 0.0001);
-        assertEquals("", C.getEl(1, 1), 7, 0.0001);
+        assertTrue("assertSumIntMatrix instance of  A.sum(B, new NpIntegerOperation()) is NpMatrix", C instanceof NpMatrix);
+        assertEquals("assertSumIntMatrix c[0][0]", C.getEl(0, 0), 6, 0.001);
+        assertEquals("assertSumIntMatrix c[0][1]", C.getEl(0, 1), 5, 0.0001);
+        assertEquals("assertSumIntMatrix c[1][0]", C.getEl(1, 0), 11, 0.0001);
+        assertEquals("assertSumIntMatrix c[1][1]", C.getEl(1, 1), 7, 0.0001);
 
     }
+
     @Test
     public void assertMultIntMatrix() throws NpMatrixException {
         NpMatrix<Integer> A = createMatrixInt2x2();
         NpMatrix<Integer> B = createMatrixInt2x3();
         NpMatrix<Integer> C = A.mult(B, new NpIntegerOperation());
 
-        assertTrue("", C instanceof NpMatrix);
-        assertEquals("", C.getEl(0, 0), 9, 0.0001);
-        assertEquals("", C.getEl(0, 1), 14, 0.0001);
-        assertEquals("", C.getEl(0, 2), 23, 0.0001);
-        assertEquals("", C.getEl(1, 0), 28, 0.0001);
-        assertEquals("", C.getEl(1, 1), 44, 0.0001);
-        assertEquals("", C.getEl(1, 2), 74, 0.0001);
+        assertTrue("assertMultIntMatrix instance of A.mult(B, new NpIntegerOperation()) is NpMatrix", C instanceof NpMatrix);
+        assertEquals("assertMultIntMatrix c[0][0]", C.getEl(0, 0), 9, 0.0001);
+        assertEquals("assertMultIntMatrix c[0][1]", C.getEl(0, 1), 14, 0.0001);
+        assertEquals("assertMultIntMatrix c[0][2]", C.getEl(0, 2), 23, 0.0001);
+        assertEquals("assertMultIntMatrix c[1][0]", C.getEl(1, 0), 28, 0.0001);
+        assertEquals("assertMultIntMatrix c[1][1]", C.getEl(1, 1), 44, 0.0001);
+        assertEquals("assertMultIntMatrix c[1][2]", C.getEl(1, 2), 74, 0.0001);
 
 
     }
+
     @Test
     public void assertExpIntMatrix() throws NpMatrixException {
         NpMatrix<Integer> A = createMatrixInt2x2();
-        NpMatrix<Integer> B = createMatrixInt2x2_();
         NpMatrix<Integer> C = A.exp(new NpIntegerOperation());
 
-        assertTrue("", C instanceof NpMatrix);
-        assertEquals("", C.getEl(0, 0), 9, 0.0001);
-        assertEquals("", C.getEl(0, 1), 14, 0.0001);
-        assertEquals("", C.getEl(1, 0), 28, 0.0001);
-        assertEquals("", C.getEl(1, 1), 44, 0.0001);
+        assertTrue("assertExpIntMatrix instance of A.exp(new NpIntegerOperation()) is NpMatrix", C instanceof NpMatrix);
+        assertEquals("assertExpIntMatrix c[0][0]", C.getEl(0, 0), 9, 0.0001);
+        assertEquals("assertExpIntMatrix c[0][1]", C.getEl(0, 1), 14, 0.0001);
+        assertEquals("assertExpIntMatrix c[1][0]", C.getEl(1, 0), 28, 0.0001);
+        assertEquals("assertExpIntMatrix c[1][1]", C.getEl(1, 1), 44, 0.0001);
 
     }
 }

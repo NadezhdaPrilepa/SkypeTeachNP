@@ -40,7 +40,7 @@ public class NpMatrix<T> {
      * @param operation NpOperation<T> class, which implements operation of multiplication elements  T type
      * @return NpMatrix number of rows equal rows of original matrix  and number of columns equal columns
      * of <code>matrix</code>
-     * @throws NpMatrixException if some elements is null or number of rows and columns each matrix not equals
+     * @throws NpMatrixException if some elements of matrix is null or number of rows and columns each matrix not equals
      */
     public NpMatrix<T> mult(NpMatrix<T> matrix, NpOperation<T> operation) throws NpMatrixException {
         NpMatrix<T> res = new NpMatrix<T>(getRow(), matrix.getCol());
@@ -67,7 +67,7 @@ public class NpMatrix<T> {
      * @param matrix
      * @param operation NpOperation<T> class, which implements operation of add elements  T type
      * @return NpMatrix number of rows and columns are equal rows and columns of original matrix
-     * @throws NpMatrixException if some elements is null or number of rows or columns each matrix not equals
+     * @throws NpMatrixException if some elements of matrix is null or number of rows or columns each matrix not equals
      */
     public NpMatrix<T> sum(NpMatrix<T> matrix, NpOperation<T> operation) throws NpMatrixException {
         if (matrix.getCol() != getCol())
@@ -87,10 +87,10 @@ public class NpMatrix<T> {
     }
 
     /**
-     *
-     * @param operation
-     * @return
-     * @throws NpMatrixException
+     *The construction of the matrix in the second degree
+     * @param operation NpOperation<T> class, which implements operation of multiplication elements  T type
+     * @return  NpMatrix number of rows and columns are equal rows and columns of original matrix
+     * @throws NpMatrixException if some elements of matrix is null or number of rows and columns original matrix not equals
      */
 
     public NpMatrix<T> exp(NpOperation<T> operation) throws NpMatrixException {
