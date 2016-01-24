@@ -19,6 +19,7 @@ public class NpMatrix<T> {
     public NpMatrix(int row, int col) {
         this.row = row;
         this.col = col;
+      //  this.el = new T [row][col];
         this.el=(T[][])new Object[row][col];
     }
 
@@ -79,6 +80,7 @@ public class NpMatrix<T> {
             for (int k = 0; k < getCol(); k++) {
                 if ((getEl(i, k) != null) && (matrix.getEl(i, k) != null)) {
                     res.setElement(i, k, operation.add(getEl(i, k), matrix.getEl(i, k)));
+                    //getEl(i, k)+matrix.getEl(i, k)
                 } else {
                     throw new NpMatrixException();
                 }
@@ -133,6 +135,7 @@ class NpIntegerOperation implements NpOperation<Integer> {
     }
 
     public Integer multi(Integer value1, Integer value2) {
+
         return value1 * value2;
     }
 
