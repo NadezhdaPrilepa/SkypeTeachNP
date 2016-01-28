@@ -1,10 +1,24 @@
+ lesson#16
+  0. TODO: make interface NpList(add, delete, getByIndex, getByElement, size)
+  1. TODO: implement from NpList - NpArrayList
+  2. TODO: Describe arrays
+  3. TODO: Make table for comparison collections based on arrays and links addresses
+
+ lesson#15
+  1. Create implement yandex result getter (get titles and urls of all
+  results in yandex page by request string)
+  2. Describe pattern rules
+  3. Describe base interface of collections
+
  lesson#14
- TODO: 1. Create class parametrized matrix of numbers and methods or some and multipled matrixes
+  1. Create class parametrized matrix of numbers and methods or some and multipled matrixes
  and A^2
- TODO: 2. Create tests
+  2. Create tests
+
  lesson#13
   1. create description of internal classes
   2. create external comparator class and use it in sorting collections
+
  lesson#12
   1. Add test mockito dependency to pom.xml
   2. Learn mockito API
