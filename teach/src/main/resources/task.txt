@@ -1,7 +1,7 @@
  lesson#16
   0. TODO: make interface NpList(add, delete, getByIndex, getByElement, size)
   1. TODO: implement from NpList - NpArrayList
-  2. TODO: Describe arrays
+  2. Describe arrays
   3. TODO: Make table for comparison collections based on arrays and links addresses
 
  lesson#15
