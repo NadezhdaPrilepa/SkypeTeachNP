@@ -2,6 +2,7 @@ package skype.teach.vb;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -10,8 +11,9 @@ import java.util.List;
 public class VbArrayCopyTeach {
     public static void main(String[] args) {
         List<String> list1 =new ArrayList<String>();
+        System.out.println(list1.size());
         String[] array = new String[100];
-
+        list1.remove("");
         array[0] = "str";
         array[1] = "str1";
         Object obj = array;

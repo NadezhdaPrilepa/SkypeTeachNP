@@ -1,8 +1,44 @@
+ lesson#22
+  1.Create interface NpBinaryTree(add, remove, contains, toStringWide, ToStringDeep)
+  2.Implement interface NpBinaryTree
+  3.Add tests (toStringWide, ToStringDeep)
+
+ lesson#21
+  1. Add remove for iterator NpList and add tests
+  2. Add benchmark tests for remove
+  3. Refactor watch methods
+  4. Make interface NpSet(add, delete, contains)
+  5. Implement NpHashSet and tests
+  6. TODO: Add benchmark for NpSet
+  7. TODO: Mark unexpected results in NpList performance excel report (used colors and comments)
+
+ lesson#20
+  1. Implement NpList as iterable (add tests)
+
+ lesson#19
+  1. Add iterator method for NpList
+  2. Implement iterator method for NpArrayList
+  3. Implement iterator method for NpLinkedList
+  4. Add benchmark performance for iterator
+  5. Describe reasons of using iterator
+
+ lesson#18
+  1. Implement NpLinkedList
+  2. Pass tests for NpLinkedList
+  3. Execute performance tests for NpLinkedList
+  4. Make comparison table
+  5. Add complexity to comparison table O(1) O(n)
+  6. Execute performance tests for LinkedList and ArrayList using benchmark for NpList
+
+ lesson#17
+  1. Create benchmark for testing performance NpList
+  2. Use class StopWatch
+
  lesson#16
-  0. TODO: make interface NpList(add, delete, getByIndex, getByElement, size)
-  1. TODO: implement from NpList - NpArrayList
+  0. Make interface NpList(add, delete, getByIndex, getByElement, size)
+  1. Implement from NpList - NpArrayList
   2. Describe arrays
-  3. TODO: Make table for comparison collections based on arrays and links addresses
+  3. Make table for comparison collections based on arrays and links addresses
 
  lesson#15
   1. Create implement yandex result getter (get titles and urls of all

@@ -1,10 +1,7 @@
 package skype.teach.np.calculator;
-import org.junit.Ignore;
+
 import org.junit.Test;
-import skype.teach.np.calculator.NpCalculator;
-import skype.teach.np.calculator.NpResult;
 import skype.teach.np.calculator.exception.NpCalculatorException;
-import skype.teach.np.calculator.exception.NpInvalidExpressionCalculatorException;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
