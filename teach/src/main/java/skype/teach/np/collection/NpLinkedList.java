@@ -196,6 +196,11 @@ public class NpLinkedList<T> implements NpList<T> {
         return false;
     }
 
+    /**
+     * Return false if List not contains in List
+     * @param element
+     * @return true if List contains element
+     */
     public boolean contains(T element) {
         int i = 0;
         NpNode<T> currentNode = firstNode;
