@@ -26,9 +26,6 @@ public class NpLinkedList<T> implements NpList<T> {
     private NpNode<T> firstNode;
     private NpNode<T> lastNode;
 
-    public void setSize(int size) {
-        this.size = size;
-    }
 
     public NpLinkedList() {
     }
