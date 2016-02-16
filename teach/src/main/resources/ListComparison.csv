@@ -1,0 +1,27 @@
+;NpArrayList;NpLinkedList;ArrayList;LinkedList
+Action ;Count;Count;Count;Count
+Delete first 1000000 items:;164150;150;157614;31
+Delete first 1000 items: ;326;648;230;38
+;;;;
+Delete 1000 last items: ;1142;1721;1245;507
+Delete 1000000 last items:;48;213;39;45
+Delete 100000000 last items:;33;71;23;26
+;;;;
+Adding 1000 items:;230;198;147;31
+Adding 1000000 items:;63;72;43;39
+Adding 100000000 items:;58;474;35;121
+;;;;
+Delete 1000000 inside items:;71113;1038307;58065;843327
+Delete 1000 inside items:;459;779;339;722
+;;;;
+Iterator 1000 items:;3141;8035;301;78
+Iterator 1000000 items:;101;143;22;32
+Iterator 100000000 items:;57;44;1;5
+;;;;
+iterator delete 1000 items:;;;;91
+iterator delete 1000000 items: ;;;;59
+Iterator 100000000 items:;;;;8
+;;;;
+iterable 1000 items:;;;;60
+iterable 1000000 items: ;;;;11
+iterable 100000000 items:;;;;4
