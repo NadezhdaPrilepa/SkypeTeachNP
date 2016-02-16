@@ -1,7 +1,7 @@
  lesson#22
-  1.Create interface NpBinaryTree(add, remove, contains, toStringWide, ToStringDeep)
-  2.Implement interface NpBinaryTree
-  3.Add tests (toStringWide, ToStringDeep)
+  1. Create interface NpBinaryTree(add, remove, contains, toStringWide, ToStringDeep)
+  2. Implement interface NpBinaryTree
+  3. Add tests (toStringWide, ToStringDeep)
 
  lesson#21
   1. Add remove for iterator NpList and add tests
